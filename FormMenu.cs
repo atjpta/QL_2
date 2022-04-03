@@ -35,7 +35,8 @@ namespace QL_2
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; // k cho che đi thanh bên dưới của máy
-
+            
+            OpenchildForm(new LoginForm());
         }
 
         // hàm màu
@@ -71,9 +72,10 @@ namespace QL_2
                 leftBorderBtn.BringToFront();
 
                 // chỉnh trang tab con
-                iconchild.IconChar = currentbtn.IconChar;
-                iconchild.IconColor = color;
+                iconMenu.IconChar = currentbtn.IconChar;
+                iconMenu.IconColor = color;
                 labelchild.Text = currentbtn.Text;
+                labelchild.ForeColor = color;
             }
         }
 
@@ -93,7 +95,7 @@ namespace QL_2
         }
 
         // hàm chuyển sang tab con
-        private void OpenchildForm(Form childForm)
+        public void OpenchildForm(Form childForm)
         {
             if(currentChilForm != null)
             {
@@ -115,7 +117,7 @@ namespace QL_2
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, RBGColor.color1);
-            OpenchildForm(new Form1());
+            OpenchildForm(new HomeForm());
 
         }
 
@@ -144,13 +146,10 @@ namespace QL_2
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, RBGColor.color5);
+            OpenchildForm(new LoginForm());
         }
 
-        private void btnLogo_Click(object sender, EventArgs e)
-        {
-            currentChilForm.Close();
-            Reset();
-        }
+       
 
 
         //hàm reset lại ban đầu
@@ -158,9 +157,11 @@ namespace QL_2
         {
             disableBtn();
             leftBorderBtn.Visible = false;
-            iconchild.IconChar = IconChar.Home;
-            iconchild.IconColor = Color.White;
-            labelchild.Text = "Home";
+            iconMenu.IconChar = IconChar.Home;
+            iconMenu.IconColor = Color.FromArgb(172, 126, 241);
+            labelchild.Text = "Trang chủ";
+            labelchild.ForeColor = Color.FromArgb(172, 126, 241);
+            OpenchildForm(new HomeForm());
 
         }
 
@@ -198,5 +199,22 @@ namespace QL_2
         {
             WindowState = FormWindowState.Minimized;
         }
+
+
+        // ấn logo thì quay về home
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            if (currentChilForm != null)
+            {
+                currentChilForm.Close();
+            }
+            Reset();
+        }
+
+        public void GoToHome()
+        {
+            OpenchildForm(new HomeForm());
+        }
+       
     }
 }
