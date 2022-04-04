@@ -48,8 +48,12 @@ namespace QL_2.AllClass
         public int Login()
         {
             SqlAll sql = new SqlAll();
-            TaiKhoan temp = sql.GetTaikhoan("root");
-            if (temp.GetPwd().ToUpper() == this.GetPwd())
+            TaiKhoan temp = sql.GetTaikhoan(this.username);
+            if(temp == null)
+            {
+                return 0;
+            }
+            if (temp.GetPwd().ToUpper() == this.GetPwd().ToUpper())
             {
                 return temp.GetMatk();
             }

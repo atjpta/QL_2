@@ -51,10 +51,10 @@ namespace QL_2.AllClass
         public TaiKhoan GetTaikhoan(String UserName)
         {
             cmd.Connection = con;
-            cmd.CommandText = 
-                "select *" +
+            cmd.CommandText =
+                "select * " +
                 "from taikhoan " +
-                "where" + UserName;
+                "where username = '" + UserName + "'";
             MySqlDataReader reader = cmd.ExecuteReader();
 
 

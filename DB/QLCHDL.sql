@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS QLCHDL;
 
-CREATE DATABASE IF NOT EXISTS QLCHDL character set "utf8";
+CREATE DATABASE IF NOT EXISTS QLCHDL;
 USE QLCHDL;
 # -----------------------------------------------------------------------------
 #       TABLE : TAIKHOAN
@@ -8,12 +8,20 @@ USE QLCHDL;
 
 CREATE TABLE IF NOT EXISTS TAIKHOAN
  (
-   USERNAME CHAR(32) NOT NULL  ,
-   MALTK int NOT NULL  ,
-   PASSWORD CHAR(200) NULL  
+   MALTK INTEGER NOT NULL  ,
+   PASSWORD CHAR(255) NULL  ,
+   USERNAME CHAR(32) NOT NULL  
    , PRIMARY KEY (USERNAME) 
  ) 
  comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE TAIKHOAN
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_TAIKHOAN_LOAITAIKHOAN
+     ON TAIKHOAN (MALTK ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : LO
@@ -44,6 +52,14 @@ CREATE TABLE IF NOT EXISTS SANPHAM
  comment = "";
 
 # -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE SANPHAM
+# -----------------------------------------------------------------------------
+
+
+CREATE UNIQUE INDEX I_FK_SANPHAM_LO
+     ON SANPHAM (MALO ASC);
+
+# -----------------------------------------------------------------------------
 #       TABLE : KHACHHANG
 # -----------------------------------------------------------------------------
 
@@ -56,6 +72,14 @@ CREATE TABLE IF NOT EXISTS KHACHHANG
    , PRIMARY KEY (MA_KHACH_HANG) 
  ) 
  comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE KHACHHANG
+# -----------------------------------------------------------------------------
+
+
+CREATE UNIQUE INDEX I_FK_KHACHHANG_LOAIKHACHHANG
+     ON KHACHHANG (MALKH ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : HOADON
@@ -87,6 +111,14 @@ CREATE TABLE IF NOT EXISTS NHANVIEN
  comment = "";
 
 # -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE NHANVIEN
+# -----------------------------------------------------------------------------
+
+
+CREATE UNIQUE INDEX I_FK_NHANVIEN_TAIKHOAN
+     ON NHANVIEN (USERNAME ASC);
+
+# -----------------------------------------------------------------------------
 #       TABLE : LOAIKHACHHANG
 # -----------------------------------------------------------------------------
 
@@ -104,7 +136,7 @@ CREATE TABLE IF NOT EXISTS LOAIKHACHHANG
 
 CREATE TABLE IF NOT EXISTS LOAITAIKHOAN
  (
-   MALTK CHAR(8) NOT NULL  ,
+   MALTK INTEGER NOT NULL  ,
    TENLTK VARCHAR(64) NULL  
    , PRIMARY KEY (MALTK) 
  ) 
@@ -123,6 +155,17 @@ CREATE TABLE IF NOT EXISTS HD_KH
  comment = "";
 
 # -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE HD_KH
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_HD_KH_KHACHHANG
+     ON HD_KH (MA_KHACH_HANG ASC);
+
+CREATE  INDEX I_FK_HD_KH_HOADON
+     ON HD_KH (MAHD ASC);
+
+# -----------------------------------------------------------------------------
 #       TABLE : NV_SP
 # -----------------------------------------------------------------------------
 
@@ -133,6 +176,17 @@ CREATE TABLE IF NOT EXISTS NV_SP
    , PRIMARY KEY (MANV,MASP) 
  ) 
  comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE NV_SP
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_NV_SP_NHANVIEN
+     ON NV_SP (MANV ASC);
+
+CREATE  INDEX I_FK_NV_SP_SANPHAM
+     ON NV_SP (MASP ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : CHITIETHOADON
@@ -146,6 +200,17 @@ CREATE TABLE IF NOT EXISTS CHITIETHOADON
    , PRIMARY KEY (MASP,MAHD) 
  ) 
  comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE CHITIETHOADON
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_CHITIETHOADON_SANPHAM
+     ON CHITIETHOADON (MASP ASC);
+
+CREATE  INDEX I_FK_CHITIETHOADON_HOADON
+     ON CHITIETHOADON (MAHD ASC);
 
 
 # -----------------------------------------------------------------------------

@@ -49,7 +49,7 @@ namespace QL_2.forms
 
             TaiKhoan taiKhoan = new TaiKhoan(guna2TextBox_taikhoan.Text, guna2TextBox_pwd.Text);
             mark = taiKhoan.Login();
-            if(mark == 1)
+            if(mark != 0)
             {
                 MessageBox.Show("đăng nhập thành công!!!!!!!", "thông báo bình thường");
                 HomeForm childForm = new HomeForm();
@@ -63,7 +63,7 @@ namespace QL_2.forms
             }
             else
             {
-                MessageBox.Show("Sai Mật khẩu!!", "Thông báo cực căng");
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!!!!", "Thông báo cực căng");
 
             }
         }
