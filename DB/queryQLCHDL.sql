@@ -16,3 +16,14 @@ select * from taikhoan;
 select * 
 from taikhoan
 where username = "root";
+
+insert into lo (malo, ngay_nhap, han_su_dung) values ("lo1", "2022-04-05", "2023-04-05");
+insert into lo (malo, ngay_nhap, han_su_dung) values ("lo2", "2022-04-05", "2023-04-05");
+insert into lo (malo, ngay_nhap, han_su_dung) values ("lo3", "2022-04-05", "2023-04-05");
+
+delete 
+from lo 
+where malo = 'lo1';
+
+select * 
+from lo;

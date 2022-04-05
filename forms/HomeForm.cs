@@ -17,5 +17,20 @@ namespace QL_2.forms
             InitializeComponent();
         }
 
+        private void OpenForm(Form form)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(form);
+            this.Tag = form;
+            form.BringToFront();
+            form.Show();
+            form.Dock = DockStyle.Fill;
+        }
+
+        private void guna2Button2_kho_Click(object sender, EventArgs e)
+        {
+            OpenForm(new QL_Lo_Form());
+        }
     }
 }

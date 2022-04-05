@@ -124,7 +124,6 @@ namespace QL_2
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, RBGColor.color1);
-            OpenchildForm(new Form2());
 
         }
 

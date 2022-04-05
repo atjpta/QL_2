@@ -24,6 +24,8 @@ namespace QL_2.AllClass
         private string database = "QLCHDL";
         private int port = 3306;
 
+
+        // kết nối vào DB
         public SqlAll()
         {
             constr = "server=" + server +
@@ -48,6 +50,8 @@ namespace QL_2.AllClass
 
         }
 
+
+        // lấy tài khoản dựa vào UserName
         public TaiKhoan GetTaikhoan(String UserName)
         {
             cmd.Connection = con;
@@ -68,6 +72,9 @@ namespace QL_2.AllClass
                             reader.GetString("password"),
                             reader.GetInt32("maltk")
                         );
+                    Console.WriteLine(reader.GetString("username"));
+                    Console.WriteLine(reader.GetString("password"));
+                    Console.WriteLine(reader.GetInt32("maltk"));
                     return taiKhoan;
                 }
             }
@@ -75,6 +82,46 @@ namespace QL_2.AllClass
             reader.Close();
             return null;
 
+        }
+
+        //lấy bảng lo từ DB
+        public List<Lo> GetALL_Lo()
+        {
+            cmd.Connection = con;
+            cmd.CommandText =
+                "select * " +
+                "from lo";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            List<Lo> los = new List<Lo>();
+
+            if (reader.HasRows)
+            {
+                int i = 0;
+                while (reader.Read())
+                {
+                    los.Add(new Lo
+                    (
+                        reader.GetString("malo"),
+                        reader.GetDateTime("ngay_nhap"),
+                        reader.GetDateTime("han_su_dung")
+                     ));
+                    i++;
+                }
+            }
+            reader.Close();
+            return los;
+        }
+
+        // xóa 1 lo dựa vào mã lo
+        public void Delete_Lo(String maLo)
+        {
+            cmd.Connection = con;
+            cmd.CommandText =
+                "delete " + 
+                "from lo " + 
+                "where malo = '" + maLo + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Close();
         }
     }
 }
