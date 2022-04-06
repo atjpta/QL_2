@@ -18,12 +18,23 @@ from taikhoan
 where username = "root";
 
 insert into lo (malo, ngay_nhap, han_su_dung) values ("lo1", "2022-04-05", "2023-04-05");
-insert into lo (malo, ngay_nhap, han_su_dung) values ("lo2", "2022-04-05", "2023-04-05");
-insert into lo (malo, ngay_nhap, han_su_dung) values ("lo3", "2022-04-05", "2023-04-05");
+insert into lo (malo, ngay_nhap, han_su_dung) values ("lo2", "2022-04-05", "2024-04-05");
+insert into lo (malo, ngay_nhap, han_su_dung) values ("lo3", "2022/04/05", "2025/04/05");
 
 delete 
 from lo 
-where malo = 'lo1';
+where malo = 'aaa';
+
+UPDATE Lo
+SET ngay_nhap = '2024-04-05',
+	han_su_dung = '2026-04-05'
+WHERE malo = "zzz";
 
 select * 
 from lo;
+
+select * 
+from lo
+where malo = "lo1";
+
+

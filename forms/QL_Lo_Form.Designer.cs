@@ -37,6 +37,7 @@ namespace QL_2.forms
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.textBox_Finding = new Guna.UI2.WinForms.Guna2TextBox();
@@ -72,33 +73,38 @@ namespace QL_2.forms
             this.dataGridView_Lo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_Lo.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_Lo.Name = "dataGridView_Lo";
+            this.dataGridView_Lo.ReadOnly = true;
             this.dataGridView_Lo.Size = new System.Drawing.Size(1000, 417);
             this.dataGridView_Lo.TabIndex = 0;
-            this.dataGridView_Lo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Lo_CellContentClick);
+            this.dataGridView_Lo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Lo_CellClick);
             // 
             // maLo
             // 
             this.maLo.FillWeight = 20.61856F;
             this.maLo.HeaderText = "Mã lô";
             this.maLo.Name = "maLo";
+            this.maLo.ReadOnly = true;
             // 
             // Nsx
             // 
             this.Nsx.FillWeight = 20.61856F;
             this.Nsx.HeaderText = "Ngày sản xuất ";
             this.Nsx.Name = "Nsx";
+            this.Nsx.ReadOnly = true;
             // 
             // Hsd
             // 
             this.Hsd.FillWeight = 20.61856F;
             this.Hsd.HeaderText = "Hạn sử dụng ";
             this.Hsd.Name = "Hsd";
+            this.Hsd.ReadOnly = true;
             // 
             // edit
             // 
             this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
             this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.edit.Text = "Sửa";
             this.edit.ToolTipText = "Sửa";
@@ -110,6 +116,7 @@ namespace QL_2.forms
             this.delete.FillWeight = 338.1443F;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
             this.delete.Text = "Xóa";
             this.delete.ToolTipText = "Xóa";
             this.delete.UseColumnTextForButtonValue = true;
@@ -118,6 +125,7 @@ namespace QL_2.forms
             // 
             this.panel1.BackgroundImage = global::QL_2.Properties.Resources.Rectangle_4;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.guna2Button_refresh);
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.textBox_Finding);
@@ -128,23 +136,46 @@ namespace QL_2.forms
             this.panel1.Size = new System.Drawing.Size(1000, 200);
             this.panel1.TabIndex = 0;
             // 
+            // guna2Button_refresh
+            // 
+            this.guna2Button_refresh.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button_refresh.BorderRadius = 20;
+            this.guna2Button_refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button_refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button_refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button_refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button_refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.guna2Button_refresh.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.guna2Button_refresh.ForeColor = System.Drawing.Color.White;
+            this.guna2Button_refresh.Image = global::QL_2.Properties.Resources.refresh;
+            this.guna2Button_refresh.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button_refresh.Location = new System.Drawing.Point(12, 105);
+            this.guna2Button_refresh.Name = "guna2Button_refresh";
+            this.guna2Button_refresh.Size = new System.Drawing.Size(160, 60);
+            this.guna2Button_refresh.TabIndex = 4;
+            this.guna2Button_refresh.Text = "Làm mới";
+            this.guna2Button_refresh.Click += new System.EventHandler(this.guna2Button_refresh_Click);
+            // 
             // guna2Button2
             // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button2.BorderRadius = 20;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.BlueViolet;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::QL_2.Properties.Resources.plus;
-            this.guna2Button2.Location = new System.Drawing.Point(829, 28);
+            this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button2.Location = new System.Drawing.Point(828, 24);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(133, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(160, 60);
             this.guna2Button2.TabIndex = 3;
             this.guna2Button2.Text = "Thêm lô";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -154,17 +185,18 @@ namespace QL_2.forms
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(28, 28);
+            this.guna2Button1.Location = new System.Drawing.Point(12, 24);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(180, 60);
             this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "QL sản phẩm";
             // 
             // textBox_Finding
             // 
-            this.textBox_Finding.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_Finding.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox_Finding.BackColor = System.Drawing.Color.Transparent;
             this.textBox_Finding.BorderRadius = 20;
             this.textBox_Finding.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -176,28 +208,28 @@ namespace QL_2.forms
             this.textBox_Finding.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_Finding.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBox_Finding.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Finding.Location = new System.Drawing.Point(297, 124);
+            this.textBox_Finding.Location = new System.Drawing.Point(538, 105);
             this.textBox_Finding.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBox_Finding.Name = "textBox_Finding";
             this.textBox_Finding.PasswordChar = '\0';
             this.textBox_Finding.PlaceholderText = "nhập mã lô";
             this.textBox_Finding.SelectedText = "";
-            this.textBox_Finding.Size = new System.Drawing.Size(450, 40);
+            this.textBox_Finding.Size = new System.Drawing.Size(450, 60);
             this.textBox_Finding.TabIndex = 1;
             this.textBox_Finding.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 50;
-            this.iconPictureBox1.Location = new System.Drawing.Point(239, 124);
+            this.iconPictureBox1.IconSize = 60;
+            this.iconPictureBox1.Location = new System.Drawing.Point(478, 113);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.iconPictureBox1.Size = new System.Drawing.Size(61, 60);
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -228,9 +260,10 @@ namespace QL_2.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Hsd;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private Guna.UI2.WinForms.Guna2TextBox textBox_Finding;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_refresh;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_Finding;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

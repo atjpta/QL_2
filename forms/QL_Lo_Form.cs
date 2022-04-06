@@ -21,7 +21,9 @@ namespace QL_2.forms
             Refresh_Lo();
         }
 
-        private void Refresh_Lo()
+
+        // lam moi ds 
+        public void Refresh_Lo()
         {
             ClearTableRows();
             los = sqlAll.GetALL_Lo();
@@ -71,29 +73,54 @@ namespace QL_2.forms
 
         }
 
+        // xóa ds
         private void ClearTableRows()
         {
             dataGridView_Lo.Rows.Clear();
         }
 
-        private void dataGridView_Lo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        //lay lo từ hàng 
+        private string Get_Ma_Lo(DataGridViewCellEventArgs e)
         {
-            string message = "Bạn có muốn xóa lô này?";
-            string title = "Xóa lô";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
+            DataGridViewRow row = this.dataGridView_Lo.Rows[e.RowIndex];
+            return row.Cells[0].Value.ToString();
+        }
+
+        private void dataGridView_Lo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == 3)
             {
-                DataGridViewRow row = this.dataGridView_Lo.Rows[e.RowIndex];
-                var maLo = row.Cells[0].Value.ToString();
-                sqlAll.Delete_Lo(maLo);
-                Refresh_Lo();
+                Update_Lo update = new Update_Lo(this, this.Get_Ma_Lo(e));
+                update.ShowDialog();
             }
-            else
+            if (e.ColumnIndex == 4)
             {
+                string message = "Bạn có muốn xóa lô này?";
+                string title = "Xóa lô";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    sqlAll.Delete_Lo(this.Get_Ma_Lo(e));
+                    Refresh_Lo();
+                }
             }
         }
 
-        
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Add_lo_Form add = new Add_lo_Form(this);
+            add.ShowDialog();
+ 
+        }
+
+        private void guna2Button_refresh_Click(object sender, EventArgs e)
+        {
+            Refresh_Lo();
+        }
+
+       
     }
 }

@@ -36,7 +36,7 @@ namespace QL_2
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; // k cho che đi thanh bên dưới của máy
             
-            OpenchildForm(new LoginForm());
+            OpenchildForm(new LoginForm(this));
         }
 
         // hàm màu
@@ -71,11 +71,6 @@ namespace QL_2
                 leftBorderBtn.Visible = true; // hiển thị ra
                 leftBorderBtn.BringToFront();
 
-                // chỉnh trang tab con
-                iconMenu.IconChar = currentbtn.IconChar;
-                iconMenu.IconColor = color;
-                labelchild.Text = currentbtn.Text;
-                labelchild.ForeColor = color;
             }
         }
 
@@ -101,6 +96,7 @@ namespace QL_2
             {
                 //đóng form hiện tại lại 
                 currentChilForm.Close();
+                labelchild.Text = "";
             }
             currentChilForm = childForm;
             childForm.TopLevel = false;
@@ -117,7 +113,7 @@ namespace QL_2
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, RBGColor.color1);
-            OpenchildForm(new HomeForm());
+            OpenchildForm(new HomeForm(this));
 
         }
 
@@ -145,7 +141,7 @@ namespace QL_2
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, RBGColor.color5);
-            OpenchildForm(new LoginForm());
+            OpenchildForm(new LoginForm(this));
         }
 
        
@@ -156,11 +152,7 @@ namespace QL_2
         {
             disableBtn();
             leftBorderBtn.Visible = false;
-            iconMenu.IconChar = IconChar.Home;
-            iconMenu.IconColor = Color.FromArgb(172, 126, 241);
-            labelchild.Text = "Trang chủ";
-            labelchild.ForeColor = Color.FromArgb(172, 126, 241);
-            OpenchildForm(new HomeForm());
+            OpenchildForm(new HomeForm(this));
 
         }
 
@@ -212,8 +204,12 @@ namespace QL_2
 
         public void GoToHome()
         {
-            OpenchildForm(new HomeForm());
+            OpenchildForm(new HomeForm(this));
         }
-       
+        
+        public void chargeTitle(string title )
+        {
+            labelchild.Text = title;
+        }
     }
 }

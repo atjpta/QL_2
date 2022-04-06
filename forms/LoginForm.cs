@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QL_2.AllClass;
+using QL_2;
 
 
 namespace QL_2.forms
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        public readonly FormMenu formMenu;
+        public LoginForm(FormMenu formMenu)
         {
+            this.formMenu = formMenu;
             InitializeComponent();
         }
 
@@ -52,7 +55,7 @@ namespace QL_2.forms
             if(mark != 0)
             {
                 MessageBox.Show("đăng nhập thành công!!!!!!!", "thông báo bình thường");
-                HomeForm childForm = new HomeForm();
+                HomeForm childForm = new HomeForm(formMenu);
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 this.Controls.Add(childForm);

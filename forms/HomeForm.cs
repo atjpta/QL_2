@@ -12,8 +12,10 @@ namespace QL_2.forms
 {
     public partial class HomeForm : Form
     {
-        public HomeForm()
+        private readonly FormMenu menu;
+        public HomeForm(FormMenu menu)
         {
+            this.menu = menu;
             InitializeComponent();
         }
 
@@ -30,6 +32,7 @@ namespace QL_2.forms
 
         private void guna2Button2_kho_Click(object sender, EventArgs e)
         {
+            menu.chargeTitle(guna2Button2_kho.Text);
             OpenForm(new QL_Lo_Form());
         }
     }

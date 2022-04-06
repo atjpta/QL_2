@@ -43,14 +43,12 @@ namespace QL_2
             this.btn_max = new FontAwesome.Sharp.IconButton();
             this.btn_exit = new FontAwesome.Sharp.IconButton();
             this.labelchild = new System.Windows.Forms.Label();
-            this.iconMenu = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -241,7 +239,6 @@ namespace QL_2
             this.panelTitle.Controls.Add(this.btn_max);
             this.panelTitle.Controls.Add(this.btn_exit);
             this.panelTitle.Controls.Add(this.labelchild);
-            this.panelTitle.Controls.Add(this.iconMenu);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -304,27 +301,12 @@ namespace QL_2
             // labelchild
             // 
             this.labelchild.AutoSize = true;
-            this.labelchild.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelchild.ForeColor = System.Drawing.Color.Violet;
-            this.labelchild.Location = new System.Drawing.Point(84, 25);
+            this.labelchild.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelchild.ForeColor = System.Drawing.Color.White;
+            this.labelchild.Location = new System.Drawing.Point(20, 9);
             this.labelchild.Name = "labelchild";
-            this.labelchild.Size = new System.Drawing.Size(61, 25);
+            this.labelchild.Size = new System.Drawing.Size(0, 42);
             this.labelchild.TabIndex = 1;
-            this.labelchild.Text = "home";
-            // 
-            // iconMenu
-            // 
-            this.iconMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(0)))), ((int)(((byte)(50)))));
-            this.iconMenu.ForeColor = System.Drawing.Color.Violet;
-            this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconMenu.IconColor = System.Drawing.Color.Violet;
-            this.iconMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenu.IconSize = 40;
-            this.iconMenu.Location = new System.Drawing.Point(38, 18);
-            this.iconMenu.Name = "iconMenu";
-            this.iconMenu.Size = new System.Drawing.Size(40, 41);
-            this.iconMenu.TabIndex = 0;
-            this.iconMenu.TabStop = false;
             // 
             // panelShadow
             // 
@@ -362,7 +344,6 @@ namespace QL_2
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,7 +359,6 @@ namespace QL_2
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel panelTitle;
-        private FontAwesome.Sharp.IconPictureBox iconMenu;
         private System.Windows.Forms.Label labelchild;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;

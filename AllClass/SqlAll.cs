@@ -16,7 +16,6 @@ namespace QL_2.AllClass
         private string constr; // lưu toan bộ thông tin để kết nối DB
         private MySqlConnection con; // dùng để kết nối 
         private MySqlCommand cmd = new MySqlCommand(); // lưu các lệnh của sql
-        private MySqlDataAdapter adt; // dùng để chuyển đổi 
 
         private string server = "localhost";
         private string user = "root";
@@ -35,19 +34,18 @@ namespace QL_2.AllClass
                     ";port=" + port +
                     ";";
 
+            con = new MySqlConnection(constr);
 
             try
             {
-                con = new MySqlConnection(constr);
                 con.Open();
                 Console.WriteLine("ket noi thanh cong!!!!!!!");
 
             }
-            catch (Exception error)
+            catch (MySqlException ex)
             {
-                Console.WriteLine(error.Message);
+                MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
 
@@ -72,9 +70,6 @@ namespace QL_2.AllClass
                             reader.GetString("password"),
                             reader.GetInt32("maltk")
                         );
-                    Console.WriteLine(reader.GetString("username"));
-                    Console.WriteLine(reader.GetString("password"));
-                    Console.WriteLine(reader.GetInt32("maltk"));
                     return taiKhoan;
                 }
             }
@@ -84,6 +79,11 @@ namespace QL_2.AllClass
 
         }
 
+        internal bool Update_Lo(Lo lo)
+        {
+            throw new NotImplementedException();
+        }
+
         //lấy bảng lo từ DB
         public List<Lo> GetALL_Lo()
         {
@@ -91,24 +91,34 @@ namespace QL_2.AllClass
             cmd.CommandText =
                 "select * " +
                 "from lo";
-            MySqlDataReader reader = cmd.ExecuteReader();
             List<Lo> los = new List<Lo>();
-
-            if (reader.HasRows)
+            try
             {
-                int i = 0;
-                while (reader.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                if (reader.HasRows)
                 {
-                    los.Add(new Lo
-                    (
-                        reader.GetString("malo"),
-                        reader.GetDateTime("ngay_nhap"),
-                        reader.GetDateTime("han_su_dung")
-                     ));
-                    i++;
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        los.Add(new Lo
+                        (
+                            reader.GetString("malo"),
+                            reader.GetDateTime("ngay_nhap"),
+                            reader.GetDateTime("han_su_dung")
+                         ));
+                        i++;
+                    }
                 }
+                reader.Close();
             }
-            reader.Close();
+            catch(MySqlException ex)
+            {
+                MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
             return los;
         }
 
@@ -117,11 +127,97 @@ namespace QL_2.AllClass
         {
             cmd.Connection = con;
             cmd.CommandText =
-                "delete " + 
-                "from lo " + 
+                "delete " +
+                "from lo " +
                 "where malo = '" + maLo + "'";
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Close();
+        }
+
+
+        //thêm lô
+        public bool Add_Lo(Lo lo)
+        {
+            if (Find_Lo(lo.Malo) == null)
+            {
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "insert into lo(malo, ngay_nhap, han_su_dung) " +
+                   "values('" + lo.Malo + "', '" + lo.Nsx.ToString("yyyy/MM/dd") + "', '" + lo.Hsd.ToString("yyyy/MM/dd") + "')";
+                try
+                {
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    reader.Close();
+                    return true;
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message , "Thông báo cực căng!!!");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã nhập trùng Mã lô", "Thông báo cực căng!!!");
+                return false;
+            }
+
+            
+        }
+
+        //tìm xem da có lô chưa
+        public Lo Find_Lo(String maLo)
+        {
+            Lo lo ;
+            cmd.Connection = con;
+            cmd.CommandText =
+                "select *" +
+                "from lo " +
+                "where malo = '" + maLo + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                int i = 0;
+                while (reader.Read())
+                {
+                    
+                    lo = new Lo
+                    (
+                        reader.GetString("malo"),
+                        reader.GetDateTime("ngay_nhap"),
+                        reader.GetDateTime("han_su_dung")
+                     );
+                    i++;
+                    return lo;
+                }
+            }
+            reader.Close();
+            return null;
+        }
+
+
+        public bool Update_Lo_db(Lo lo)
+        {
+            cmd.Connection = con;
+            cmd.CommandText =
+                "update lo " +
+                "set    ngay_nhap = '" + lo.Nsx.ToString("yyyy/MM/dd") + "', " +
+                "       han_su_dung = '" + lo.Hsd.ToString("yyyy/MM/dd") + "' " +
+                "where malo = '" + lo.Malo + "' ";
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Close();
+                return true;
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo cực căng của sửa Lô!!! ");
+                return false;
+            }
         }
     }
 }
