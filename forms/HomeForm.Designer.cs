@@ -134,13 +134,14 @@ namespace QL_2.forms
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::QL_2.Properties.Resources.icon_buy;
+            this.guna2Button5.Image = global::QL_2.Properties.Resources.users;
             this.guna2Button5.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button5.Location = new System.Drawing.Point(700, 152);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(260, 120);
             this.guna2Button5.TabIndex = 4;
-            this.guna2Button5.Text = "Bán hàng";
+            this.guna2Button5.Text = "Nhân viên";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // HomeForm
             // 

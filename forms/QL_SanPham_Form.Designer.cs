@@ -1,7 +1,7 @@
 ﻿
 namespace QL_2.forms
 {
-    partial class QL_Lo_Form
+    partial class QL_SanPham_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,19 @@ namespace QL_2.forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView_Lo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button_switch = new Guna.UI2.WinForms.Guna2Button();
             this.textBox_Finding = new Guna.UI2.WinForms.Guna2TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.maLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nsx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hsd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ảnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Name_sanpham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
@@ -64,58 +60,26 @@ namespace QL_2.forms
             this.panel2.Location = new System.Drawing.Point(0, 200);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 417);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 3;
             // 
             // dataGridView_Lo
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView_Lo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Lo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Lo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Lo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Lo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maLo,
-            this.Nsx,
-            this.Hsd,
+            this.ảnh,
+            this.Name_sanpham,
+            this.maSp,
+            this.DonViTinh,
+            this.SoLuong,
             this.edit,
             this.delete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Lo.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Lo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Lo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView_Lo.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_Lo.Name = "dataGridView_Lo";
             this.dataGridView_Lo.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Lo.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView_Lo.RowHeadersWidth = 50;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView_Lo.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView_Lo.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView_Lo.RowTemplate.Height = 30;
-            this.dataGridView_Lo.ShowCellToolTips = false;
             this.dataGridView_Lo.Size = new System.Drawing.Size(1000, 417);
             this.dataGridView_Lo.TabIndex = 0;
-            this.dataGridView_Lo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Lo_CellClick);
             // 
             // panel1
             // 
@@ -123,14 +87,14 @@ namespace QL_2.forms
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.guna2Button_refresh);
             this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.guna2Button_switch);
             this.panel1.Controls.Add(this.textBox_Finding);
             this.panel1.Controls.Add(this.iconPictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 200);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // guna2Button_refresh
             // 
@@ -150,7 +114,6 @@ namespace QL_2.forms
             this.guna2Button_refresh.Size = new System.Drawing.Size(160, 60);
             this.guna2Button_refresh.TabIndex = 4;
             this.guna2Button_refresh.Text = "Làm mới";
-            this.guna2Button_refresh.Click += new System.EventHandler(this.guna2Button_refresh_Click);
             // 
             // guna2Button2
             // 
@@ -166,32 +129,32 @@ namespace QL_2.forms
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::QL_2.Properties.Resources.plus;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(828, 24);
+            this.guna2Button2.Location = new System.Drawing.Point(748, 24);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(160, 60);
+            this.guna2Button2.Size = new System.Drawing.Size(240, 60);
             this.guna2Button2.TabIndex = 3;
-            this.guna2Button2.Text = "Thêm lô";
+            this.guna2Button2.Text = "Thêm sản phẩm";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // guna2Button1
+            // guna2Button_switch
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::QL_2.Properties.Resources.backk;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(12, 24);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(200, 60);
-            this.guna2Button1.TabIndex = 2;
-            this.guna2Button1.Text = "QL sản phẩm";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button_switch.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button_switch.BorderRadius = 20;
+            this.guna2Button_switch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button_switch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button_switch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button_switch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button_switch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.guna2Button_switch.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.guna2Button_switch.ForeColor = System.Drawing.Color.White;
+            this.guna2Button_switch.Image = global::QL_2.Properties.Resources.backk;
+            this.guna2Button_switch.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button_switch.Location = new System.Drawing.Point(12, 24);
+            this.guna2Button_switch.Name = "guna2Button_switch";
+            this.guna2Button_switch.Size = new System.Drawing.Size(160, 60);
+            this.guna2Button_switch.TabIndex = 2;
+            this.guna2Button_switch.Text = "QL số lô";
+            this.guna2Button_switch.Click += new System.EventHandler(this.guna2Button_switch_Click);
             // 
             // textBox_Finding
             // 
@@ -211,11 +174,10 @@ namespace QL_2.forms
             this.textBox_Finding.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBox_Finding.Name = "textBox_Finding";
             this.textBox_Finding.PasswordChar = '\0';
-            this.textBox_Finding.PlaceholderText = "nhập mã lô";
+            this.textBox_Finding.PlaceholderText = "nhập mã, tên sản phẩm ...";
             this.textBox_Finding.SelectedText = "";
             this.textBox_Finding.Size = new System.Drawing.Size(450, 60);
             this.textBox_Finding.TabIndex = 1;
-            this.textBox_Finding.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // iconPictureBox1
             // 
@@ -232,33 +194,39 @@ namespace QL_2.forms
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // maLo
+            // ảnh
             // 
-            this.maLo.FillWeight = 20.61856F;
-            this.maLo.HeaderText = "Mã lô";
-            this.maLo.Name = "maLo";
-            this.maLo.ReadOnly = true;
+            this.ảnh.HeaderText = "Img";
+            this.ảnh.Name = "ảnh";
+            this.ảnh.ReadOnly = true;
             // 
-            // Nsx
+            // Name_sanpham
             // 
-            this.Nsx.FillWeight = 20.61856F;
-            this.Nsx.HeaderText = "Ngày sản xuất ";
-            this.Nsx.Name = "Nsx";
-            this.Nsx.ReadOnly = true;
+            this.Name_sanpham.HeaderText = "Tên sản phẩm";
+            this.Name_sanpham.Name = "Name_sanpham";
+            this.Name_sanpham.ReadOnly = true;
             // 
-            // Hsd
+            // maSp
             // 
-            this.Hsd.FillWeight = 20.61856F;
-            this.Hsd.HeaderText = "Hạn sử dụng ";
-            this.Hsd.Name = "Hsd";
-            this.Hsd.ReadOnly = true;
+            this.maSp.HeaderText = "Mã sản phẩm";
+            this.maSp.Name = "maSp";
+            this.maSp.ReadOnly = true;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.HeaderText = "Đơn giá";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             // 
             // edit
             // 
             this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
@@ -278,15 +246,17 @@ namespace QL_2.forms
             this.delete.ToolTipText = "Xóa";
             this.delete.UseColumnTextForButtonValue = true;
             // 
-            // QL_Lo_Form
+            // QL_SanPham_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 617);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "QL_Lo_Form";
-            this.Text = "QL_Lo_Form";
+            this.Name = "QL_SanPham_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "QL_SanPham_Form";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Lo)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -297,17 +267,19 @@ namespace QL_2.forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView_Lo;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button_refresh;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_switch;
         private Guna.UI2.WinForms.Guna2TextBox textBox_Finding;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maLo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nsx;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hsd;
+        private System.Windows.Forms.DataGridViewImageColumn ảnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name_sanpham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
     }

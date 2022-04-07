@@ -1,7 +1,7 @@
 ﻿
 namespace QL_2.forms
 {
-    partial class Update_Lo
+    partial class Update_Lo_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -67,7 +67,7 @@ namespace QL_2.forms
             this.label_fix_maLo.AutoSize = true;
             this.label_fix_maLo.BackColor = System.Drawing.Color.Transparent;
             this.label_fix_maLo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_fix_maLo.Location = new System.Drawing.Point(300, 81);
+            this.label_fix_maLo.Location = new System.Drawing.Point(407, 62);
             this.label_fix_maLo.Name = "label_fix_maLo";
             this.label_fix_maLo.Size = new System.Drawing.Size(29, 25);
             this.label_fix_maLo.TabIndex = 8;
@@ -84,7 +84,7 @@ namespace QL_2.forms
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(486, 275);
+            this.guna2Button2.Location = new System.Drawing.Point(488, 271);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 7;
@@ -102,7 +102,7 @@ namespace QL_2.forms
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(133, 275);
+            this.guna2Button1.Location = new System.Drawing.Point(135, 271);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 6;
@@ -114,7 +114,7 @@ namespace QL_2.forms
             this.dateTimePicker_Hsd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Hsd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Hsd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_Hsd.Location = new System.Drawing.Point(296, 205);
+            this.dateTimePicker_Hsd.Location = new System.Drawing.Point(403, 186);
             this.dateTimePicker_Hsd.Name = "dateTimePicker_Hsd";
             this.dateTimePicker_Hsd.Size = new System.Drawing.Size(161, 31);
             this.dateTimePicker_Hsd.TabIndex = 5;
@@ -124,7 +124,7 @@ namespace QL_2.forms
             this.dateTimePicker_Nsx.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Nsx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Nsx.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_Nsx.Location = new System.Drawing.Point(296, 145);
+            this.dateTimePicker_Nsx.Location = new System.Drawing.Point(403, 126);
             this.dateTimePicker_Nsx.Name = "dateTimePicker_Nsx";
             this.dateTimePicker_Nsx.Size = new System.Drawing.Size(161, 31);
             this.dateTimePicker_Nsx.TabIndex = 4;
@@ -134,7 +134,7 @@ namespace QL_2.forms
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 210);
+            this.label4.Location = new System.Drawing.Point(235, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 25);
             this.label4.TabIndex = 2;
@@ -145,7 +145,7 @@ namespace QL_2.forms
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(128, 145);
+            this.label3.Location = new System.Drawing.Point(235, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 25);
             this.label3.TabIndex = 1;
@@ -156,7 +156,7 @@ namespace QL_2.forms
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 81);
+            this.label2.Location = new System.Drawing.Point(235, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 0;
@@ -178,20 +178,22 @@ namespace QL_2.forms
             this.label_Title.AutoSize = true;
             this.label_Title.BackColor = System.Drawing.Color.Transparent;
             this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Title.Location = new System.Drawing.Point(285, 25);
+            this.label_Title.Location = new System.Drawing.Point(313, 26);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(165, 39);
             this.label_Title.TabIndex = 0;
             this.label_Title.Text = "Sửa Số lô";
             // 
-            // Update_Lo
+            // Update_Lo_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Update_Lo";
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.Name = "Update_Lo_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "update_Lo";
             this.panel2.ResumeLayout(false);

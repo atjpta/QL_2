@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllClass\Lo.cs" />
+    <Compile Include="AllClass\NhanVien.cs" />
+    <Compile Include="AllClass\SanPham.cs" />
     <Compile Include="AllClass\SqlAll.cs" />
     <Compile Include="AllClass\TaiKhoan.cs" />
     <Compile Include="FormMenu.cs">
@@ -107,6 +109,12 @@
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Add_SanPham_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Add_SanPham_Form.Designer.cs">
+      <DependentUpon>Add_SanPham_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Add_lo_Form.cs">
       <SubType>Form</SubType>
@@ -132,16 +140,31 @@
     <Compile Include="forms\QL_Lo_Form.Designer.cs">
       <DependentUpon>QL_Lo_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Update_Lo.cs">
+    <Compile Include="forms\QL_NhanVien_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Update_Lo.Designer.cs">
-      <DependentUpon>Update_Lo.cs</DependentUpon>
+    <Compile Include="forms\QL_NhanVien_Form.Designer.cs">
+      <DependentUpon>QL_NhanVien_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\QL_SanPham_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\QL_SanPham_Form.Designer.cs">
+      <DependentUpon>QL_SanPham_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Update_Lo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Update_Lo_Form.Designer.cs">
+      <DependentUpon>Update_Lo_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Add_SanPham_Form.resx">
+      <DependentUpon>Add_SanPham_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Add_lo_Form.resx">
       <DependentUpon>Add_lo_Form.cs</DependentUpon>
@@ -155,8 +178,14 @@
     <EmbeddedResource Include="forms\QL_Lo_Form.resx">
       <DependentUpon>QL_Lo_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Update_Lo.resx">
-      <DependentUpon>Update_Lo.cs</DependentUpon>
+    <EmbeddedResource Include="forms\QL_NhanVien_Form.resx">
+      <DependentUpon>QL_NhanVien_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\QL_SanPham_Form.resx">
+      <DependentUpon>QL_SanPham_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Update_Lo_Form.resx">
+      <DependentUpon>Update_Lo_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,6 +255,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downLoad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

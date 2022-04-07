@@ -11,12 +11,12 @@ using QL_2.AllClass;
 
 namespace QL_2.forms
 {
-    public partial class Update_Lo : Form
+    public partial class Update_Lo_Form : Form
     {
         private Lo lo;
         private readonly QL_Lo_Form qL_Lo;
 
-        public Update_Lo(QL_Lo_Form ql_Lo, string Malo)
+        public Update_Lo_Form(QL_Lo_Form ql_Lo, string Malo)
         {
             this.qL_Lo = ql_Lo;
             InitializeComponent();

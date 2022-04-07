@@ -33,7 +33,14 @@ namespace QL_2.forms
         private void guna2Button2_kho_Click(object sender, EventArgs e)
         {
             menu.chargeTitle(guna2Button2_kho.Text);
-            OpenForm(new QL_Lo_Form());
+            OpenForm(new QL_Lo_Form(menu));
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

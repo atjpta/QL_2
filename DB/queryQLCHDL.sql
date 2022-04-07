@@ -8,6 +8,9 @@ insert into taikhoan(username, maltk, password) values("root","1" , "d404559f602
 # là 1234
 
 insert into taikhoan(username, maltk, password) values("nhanvien1","3" , "d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db");
+insert into taikhoan(username, maltk, password) values("nhanvien2","3" , "d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db");
+insert into taikhoan(username, maltk, password) values("nhanvien3","3" , "d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db");
+insert into taikhoan(username, maltk, password) values("nhanvien4","3" , "d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db");
 # là 1234
 
 select * from loaitaikhoan;
@@ -37,4 +40,26 @@ select *
 from lo
 where malo = "lo1";
 
+select * 
+from sanpham;
+
+
+insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
+values ("root", "chu toa", "M","2022-03-03", "dia chi ne", "0342622915");
+
+insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
+value ("nhanvien1", "chu toa22", "M","2022-03-03", "dia chi ne", "0342622915");
+
+
+insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
+value ("nhanvien2", "chu toa22", "M","2022-03-03", "dia chi ne", "0342622915");
+
+
+insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
+value ("nhanvien3", "chu toa22", "M","2022-03-03", "dia chi ne", "0342622915");
+
+
+insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
+value ("nhanvien4", "chu toa22", "M","2022-03-03", "dia chi ne", "0342622915");
+select * from nhanvien;
 

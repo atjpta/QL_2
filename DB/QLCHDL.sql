@@ -8,9 +8,9 @@ USE QLCHDL;
 
 CREATE TABLE IF NOT EXISTS TAIKHOAN
  (
-   MALTK INTEGER NOT NULL  ,
-   PASSWORD CHAR(255) NULL  ,
-   USERNAME CHAR(32) NOT NULL  
+   USERNAME CHAR(32) NOT NULL  ,
+   MALTK CHAR(8) NOT NULL  ,
+   PASSWORD VARCHAR(256) NULL  
    , PRIMARY KEY (USERNAME) 
  ) 
  comment = "";
@@ -42,12 +42,14 @@ CREATE TABLE IF NOT EXISTS LO
 
 CREATE TABLE IF NOT EXISTS SANPHAM
  (
-   MASP CHAR(8) NOT NULL  ,
+   ID_SP INTEGER(11) NOT NULL auto_increment ,
+   ID_NV INTEGER(11) NOT NULL  ,
    MALO CHAR(8) NOT NULL  ,
    TENSP VARCHAR(64) NULL  ,
    DON_VI_TINH CHAR(32) NULL  ,
-   SO_LUONG_TON_KHO INTEGER NULL  
-   , PRIMARY KEY (MASP) 
+   SO_LUONG_TON_KHO INTEGER(2) NULL  ,
+   IMG LONGBLOB NULL  
+   , PRIMARY KEY (ID_SP) 
  ) 
  comment = "";
 
@@ -56,7 +58,10 @@ CREATE TABLE IF NOT EXISTS SANPHAM
 # -----------------------------------------------------------------------------
 
 
-CREATE UNIQUE INDEX I_FK_SANPHAM_LO
+CREATE  INDEX I_FK_SANPHAM_NHANVIEN
+     ON SANPHAM (ID_NV ASC);
+
+CREATE  INDEX I_FK_SANPHAM_LO
      ON SANPHAM (MALO ASC);
 
 # -----------------------------------------------------------------------------
@@ -65,11 +70,11 @@ CREATE UNIQUE INDEX I_FK_SANPHAM_LO
 
 CREATE TABLE IF NOT EXISTS KHACHHANG
  (
-   MA_KHACH_HANG CHAR(8) NOT NULL  ,
-   MALKH CHAR(8) NOT NULL  ,
+   ID_KHACH_HANG INTEGER(11) NOT NULL auto_increment ,
+   ID_KH INTEGER(11) NOT NULL  ,
    HO_TEN_KH VARCHAR(64) NULL  ,
    SDT CHAR(16) NULL  
-   , PRIMARY KEY (MA_KHACH_HANG) 
+   , PRIMARY KEY (ID_KHACH_HANG) 
  ) 
  comment = "";
 
@@ -78,8 +83,8 @@ CREATE TABLE IF NOT EXISTS KHACHHANG
 # -----------------------------------------------------------------------------
 
 
-CREATE UNIQUE INDEX I_FK_KHACHHANG_LOAIKHACHHANG
-     ON KHACHHANG (MALKH ASC);
+CREATE  INDEX I_FK_KHACHHANG_LOAIKHACHHANG
+     ON KHACHHANG (ID_KH ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : HOADON
@@ -87,11 +92,24 @@ CREATE UNIQUE INDEX I_FK_KHACHHANG_LOAIKHACHHANG
 
 CREATE TABLE IF NOT EXISTS HOADON
  (
-   MAHD CHAR(8) NOT NULL  ,
+   ID_HD INTEGER(11) NOT NULL  ,
+   ID_KHACH_HANG INTEGER(11) NOT NULL  ,
+   ID_NV INTEGER(11) NOT NULL  ,
    NGAY_LAP DATE NULL  
-   , PRIMARY KEY (MAHD) 
+   , PRIMARY KEY (ID_HD) 
  ) 
  comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE HOADON
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_HOADON_KHACHHANG
+     ON HOADON (ID_KHACH_HANG ASC);
+
+CREATE  INDEX I_FK_HOADON_NHANVIEN
+     ON HOADON (ID_NV ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : NHANVIEN
@@ -99,14 +117,14 @@ CREATE TABLE IF NOT EXISTS HOADON
 
 CREATE TABLE IF NOT EXISTS NHANVIEN
  (
-   MANV CHAR(8) NOT NULL  ,
+   ID_NV INTEGER(11) NOT NULL auto_increment ,
    USERNAME CHAR(32) NOT NULL  ,
    HO_TEN_NV VARCHAR(64) NULL  ,
    GIOI_TINH CHAR(1) NULL  ,
    NGAY_SINH DATE NULL  ,
    DIA_CHI VARCHAR(128) NULL  ,
    SDT CHAR(16) NULL  
-   , PRIMARY KEY (MANV) 
+   , PRIMARY KEY (ID_NV) 
  ) 
  comment = "";
 
@@ -124,9 +142,10 @@ CREATE UNIQUE INDEX I_FK_NHANVIEN_TAIKHOAN
 
 CREATE TABLE IF NOT EXISTS LOAIKHACHHANG
  (
-   MALKH CHAR(8) NOT NULL  ,
+   ID_KH INTEGER(11) NOT NULL auto_increment ,
+   MALKH CHAR(8) NULL  ,
    TENLKH VARCHAR(128) NULL  
-   , PRIMARY KEY (MALKH) 
+   , PRIMARY KEY (ID_KH) 
  ) 
  comment = "";
 
@@ -136,57 +155,11 @@ CREATE TABLE IF NOT EXISTS LOAIKHACHHANG
 
 CREATE TABLE IF NOT EXISTS LOAITAIKHOAN
  (
-   MALTK INTEGER NOT NULL  ,
+   MALTK CHAR(8) NOT NULL  ,
    TENLTK VARCHAR(64) NULL  
    , PRIMARY KEY (MALTK) 
  ) 
  comment = "";
-
-# -----------------------------------------------------------------------------
-#       TABLE : HD_KH
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS HD_KH
- (
-   MA_KHACH_HANG CHAR(8) NOT NULL  ,
-   MAHD CHAR(8) NOT NULL  
-   , PRIMARY KEY (MA_KHACH_HANG,MAHD) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE HD_KH
-# -----------------------------------------------------------------------------
-
-
-CREATE  INDEX I_FK_HD_KH_KHACHHANG
-     ON HD_KH (MA_KHACH_HANG ASC);
-
-CREATE  INDEX I_FK_HD_KH_HOADON
-     ON HD_KH (MAHD ASC);
-
-# -----------------------------------------------------------------------------
-#       TABLE : NV_SP
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS NV_SP
- (
-   MANV CHAR(8) NOT NULL  ,
-   MASP CHAR(8) NOT NULL  
-   , PRIMARY KEY (MANV,MASP) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE NV_SP
-# -----------------------------------------------------------------------------
-
-
-CREATE  INDEX I_FK_NV_SP_NHANVIEN
-     ON NV_SP (MANV ASC);
-
-CREATE  INDEX I_FK_NV_SP_SANPHAM
-     ON NV_SP (MASP ASC);
 
 # -----------------------------------------------------------------------------
 #       TABLE : CHITIETHOADON
@@ -194,10 +167,10 @@ CREATE  INDEX I_FK_NV_SP_SANPHAM
 
 CREATE TABLE IF NOT EXISTS CHITIETHOADON
  (
-   MASP CHAR(8) NOT NULL  ,
-   MAHD CHAR(8) NOT NULL  ,
-   SO_LUONG INTEGER NULL  
-   , PRIMARY KEY (MASP,MAHD) 
+   ID_SP INTEGER(11) NOT NULL  ,
+   ID_HD INTEGER(11) NOT NULL  ,
+   SO_LUONG INTEGER(2) NULL  
+   , PRIMARY KEY (ID_SP,ID_HD) 
  ) 
  comment = "";
 
@@ -207,10 +180,10 @@ CREATE TABLE IF NOT EXISTS CHITIETHOADON
 
 
 CREATE  INDEX I_FK_CHITIETHOADON_SANPHAM
-     ON CHITIETHOADON (MASP ASC);
+     ON CHITIETHOADON (ID_SP ASC);
 
 CREATE  INDEX I_FK_CHITIETHOADON_HOADON
-     ON CHITIETHOADON (MAHD ASC);
+     ON CHITIETHOADON (ID_HD ASC);
 
 
 # -----------------------------------------------------------------------------
@@ -224,13 +197,28 @@ ALTER TABLE TAIKHOAN
 
 
 ALTER TABLE SANPHAM 
+  ADD FOREIGN KEY FK_SANPHAM_NHANVIEN (ID_NV)
+      REFERENCES NHANVIEN (ID_NV) ;
+
+
+ALTER TABLE SANPHAM 
   ADD FOREIGN KEY FK_SANPHAM_LO (MALO)
       REFERENCES LO (MALO) ;
 
 
 ALTER TABLE KHACHHANG 
-  ADD FOREIGN KEY FK_KHACHHANG_LOAIKHACHHANG (MALKH)
-      REFERENCES LOAIKHACHHANG (MALKH) ;
+  ADD FOREIGN KEY FK_KHACHHANG_LOAIKHACHHANG (ID_KH)
+      REFERENCES LOAIKHACHHANG (ID_KH) ;
+
+
+ALTER TABLE HOADON 
+  ADD FOREIGN KEY FK_HOADON_KHACHHANG (ID_KHACH_HANG)
+      REFERENCES KHACHHANG (ID_KHACH_HANG) ;
+
+
+ALTER TABLE HOADON 
+  ADD FOREIGN KEY FK_HOADON_NHANVIEN (ID_NV)
+      REFERENCES NHANVIEN (ID_NV) ;
 
 
 ALTER TABLE NHANVIEN 
@@ -238,32 +226,12 @@ ALTER TABLE NHANVIEN
       REFERENCES TAIKHOAN (USERNAME) ;
 
 
-ALTER TABLE HD_KH 
-  ADD FOREIGN KEY FK_HD_KH_KHACHHANG (MA_KHACH_HANG)
-      REFERENCES KHACHHANG (MA_KHACH_HANG) ;
-
-
-ALTER TABLE HD_KH 
-  ADD FOREIGN KEY FK_HD_KH_HOADON (MAHD)
-      REFERENCES HOADON (MAHD) ;
-
-
-ALTER TABLE NV_SP 
-  ADD FOREIGN KEY FK_NV_SP_NHANVIEN (MANV)
-      REFERENCES NHANVIEN (MANV) ;
-
-
-ALTER TABLE NV_SP 
-  ADD FOREIGN KEY FK_NV_SP_SANPHAM (MASP)
-      REFERENCES SANPHAM (MASP) ;
+ALTER TABLE CHITIETHOADON 
+  ADD FOREIGN KEY FK_CHITIETHOADON_SANPHAM (ID_SP)
+      REFERENCES SANPHAM (ID_SP) ;
 
 
 ALTER TABLE CHITIETHOADON 
-  ADD FOREIGN KEY FK_CHITIETHOADON_SANPHAM (MASP)
-      REFERENCES SANPHAM (MASP) ;
-
-
-ALTER TABLE CHITIETHOADON 
-  ADD FOREIGN KEY FK_CHITIETHOADON_HOADON (MAHD)
-      REFERENCES HOADON (MAHD) ;
+  ADD FOREIGN KEY FK_CHITIETHOADON_HOADON (ID_HD)
+      REFERENCES HOADON (ID_HD) ;
 

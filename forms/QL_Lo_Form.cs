@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QL_2.AllClass;
+using QL_2.forms;
 
 namespace QL_2.forms
 {
     public partial class QL_Lo_Form : Form
     {
+        private readonly FormMenu menu;
         private SqlAll sqlAll = new SqlAll();
         List<Lo> los = new List<Lo>();
-        public QL_Lo_Form()
+        public QL_Lo_Form(FormMenu menu)
         {
+            this.menu = menu;
             InitializeComponent();
             Refresh_Lo();
         }
@@ -92,7 +95,7 @@ namespace QL_2.forms
 
             if (e.ColumnIndex == 3)
             {
-                Update_Lo update = new Update_Lo(this, this.Get_Ma_Lo(e));
+                Update_Lo_Form update = new Update_Lo_Form(this, this.Get_Ma_Lo(e));
                 update.ShowDialog();
             }
             if (e.ColumnIndex == 4)
@@ -121,6 +124,11 @@ namespace QL_2.forms
             Refresh_Lo();
         }
 
-       
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            QL_SanPham_Form qL_SanPham = new QL_SanPham_Form(menu);
+            menu.OpenchildForm(qL_SanPham);
+            menu.chargeTitle("Kho");
+        }
     }
 }
