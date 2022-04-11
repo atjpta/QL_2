@@ -80,9 +80,9 @@ namespace QL_2.forms
                 qL_SanPham_Form.GetAllListOfSanPham();
 
                 MessageBox.Show("Sửa thành công", "Thông báo cực căng!");
-                
 
-                /*this.Close();*/
+
+                this.Close();
             }
         }
 
