@@ -92,24 +92,28 @@ namespace QL_2.forms
 
         private void dataGridView_Lo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (e.ColumnIndex == 3)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView_Lo.RowCount)
             {
-                Update_Lo_Form update = new Update_Lo_Form(this, this.Get_Ma_Lo(e));
-                update.ShowDialog();
-            }
-            if (e.ColumnIndex == 4)
-            {
-                string message = "Bạn có muốn xóa lô này?";
-                string title = "Xóa lô";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
+                if (e.ColumnIndex == 3)
                 {
-                    sqlAll.Delete_Lo(this.Get_Ma_Lo(e));
-                    Refresh_Lo();
+                    Update_Lo_Form update = new Update_Lo_Form(this, this.Get_Ma_Lo(e));
+                    update.ShowDialog();
+                }
+                if (e.ColumnIndex == 4)
+                {
+                    string message = "Bạn có muốn xóa lô này?";
+                    string title = "Xóa lô";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        sqlAll.Delete_Lo(this.Get_Ma_Lo(e));
+                        Refresh_Lo();
+                    }
                 }
             }
+
+                
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -130,5 +134,7 @@ namespace QL_2.forms
             menu.OpenchildForm(qL_SanPham);
             menu.chargeTitle("Kho");
         }
+
+      
     }
 }

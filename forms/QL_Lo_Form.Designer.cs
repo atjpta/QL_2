@@ -37,17 +37,17 @@ namespace QL_2.forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView_Lo = new System.Windows.Forms.DataGridView();
+            this.maLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nsx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hsd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.textBox_Finding = new Guna.UI2.WinForms.Guna2TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.maLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nsx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hsd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Lo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,6 +68,8 @@ namespace QL_2.forms
             // 
             // dataGridView_Lo
             // 
+            this.dataGridView_Lo.AllowUserToAddRows = false;
+            this.dataGridView_Lo.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_Lo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Lo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -116,6 +118,52 @@ namespace QL_2.forms
             this.dataGridView_Lo.Size = new System.Drawing.Size(1000, 417);
             this.dataGridView_Lo.TabIndex = 0;
             this.dataGridView_Lo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Lo_CellClick);
+            // 
+            // maLo
+            // 
+            this.maLo.FillWeight = 20.61856F;
+            this.maLo.HeaderText = "Mã lô";
+            this.maLo.Name = "maLo";
+            this.maLo.ReadOnly = true;
+            // 
+            // Nsx
+            // 
+            this.Nsx.FillWeight = 20.61856F;
+            this.Nsx.HeaderText = "Ngày sản xuất ";
+            this.Nsx.Name = "Nsx";
+            this.Nsx.ReadOnly = true;
+            // 
+            // Hsd
+            // 
+            this.Hsd.FillWeight = 20.61856F;
+            this.Hsd.HeaderText = "Hạn sử dụng ";
+            this.Hsd.Name = "Hsd";
+            this.Hsd.ReadOnly = true;
+            // 
+            // edit
+            // 
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.edit.HeaderText = "";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.Text = "Sửa";
+            this.edit.ToolTipText = "Sửa";
+            this.edit.UseColumnTextForButtonValue = true;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.delete.FillWeight = 338.1443F;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "Xóa";
+            this.delete.ToolTipText = "Xóa";
+            this.delete.UseColumnTextForButtonValue = true;
             // 
             // panel1
             // 
@@ -231,52 +279,6 @@ namespace QL_2.forms
             this.iconPictureBox1.Size = new System.Drawing.Size(61, 60);
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
-            // 
-            // maLo
-            // 
-            this.maLo.FillWeight = 20.61856F;
-            this.maLo.HeaderText = "Mã lô";
-            this.maLo.Name = "maLo";
-            this.maLo.ReadOnly = true;
-            // 
-            // Nsx
-            // 
-            this.Nsx.FillWeight = 20.61856F;
-            this.Nsx.HeaderText = "Ngày sản xuất ";
-            this.Nsx.Name = "Nsx";
-            this.Nsx.ReadOnly = true;
-            // 
-            // Hsd
-            // 
-            this.Hsd.FillWeight = 20.61856F;
-            this.Hsd.HeaderText = "Hạn sử dụng ";
-            this.Hsd.Name = "Hsd";
-            this.Hsd.ReadOnly = true;
-            // 
-            // edit
-            // 
-            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.edit.HeaderText = "";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit.Text = "Sửa";
-            this.edit.ToolTipText = "Sửa";
-            this.edit.UseColumnTextForButtonValue = true;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.delete.FillWeight = 338.1443F;
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "Xóa";
-            this.delete.ToolTipText = "Xóa";
-            this.delete.UseColumnTextForButtonValue = true;
             // 
             // QL_Lo_Form
             // 

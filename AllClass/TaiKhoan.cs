@@ -45,6 +45,11 @@ namespace QL_2.AllClass
             return this.maTK;
         }
 
+        public string Get_Username()
+        {
+            return this.username;
+        }
+
         public int Login()
         {
             SqlAll sql = new SqlAll();
