@@ -23,6 +23,30 @@ namespace QL_2.AllClass
         private string database = "QLCHDL";
         private int port = 3306;
 
+        public MySqlConnection Connection()
+        {
+            constr = "server=" + server +
+                    ";user=" + user +
+                    ";pwd=" + pwd +
+                    ";database=" + database +
+                    ";port=" + port +
+                    ";";
+
+            con = new MySqlConnection(constr);
+
+            try
+            {
+                con.Open();
+                Console.WriteLine("ket noi thanh cong!!!!!!!");
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return con;
+        }
 
         // kết nối vào DB
         public SqlAll()

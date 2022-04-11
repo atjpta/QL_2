@@ -54,6 +54,7 @@ namespace QL_2.forms
             mark = taiKhoan.Login();
             if(mark != 0)
             {
+                formMenu.currentUsername = taiKhoan.Get_Username();
                 MessageBox.Show("đăng nhập thành công!!!!!!!", "thông báo bình thường");
                 HomeForm childForm = new HomeForm(formMenu);
                 childForm.TopLevel = false;

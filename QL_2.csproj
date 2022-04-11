@@ -103,12 +103,19 @@
     <Compile Include="AllClass\NhanVien.cs" />
     <Compile Include="AllClass\SanPham.cs" />
     <Compile Include="AllClass\SqlAll.cs" />
+    <Compile Include="AllClass\Sql_NhanVien.cs" />
     <Compile Include="AllClass\TaiKhoan.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Add_nv_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Add_nv_From.Designer.cs">
+      <DependentUpon>Add_nv_From.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Add_SanPham_Form.cs">
       <SubType>Form</SubType>
@@ -158,10 +165,19 @@
     <Compile Include="forms\Update_Lo_Form.Designer.cs">
       <DependentUpon>Update_Lo_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Update_nv_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Update_nv_Form.Designer.cs">
+      <DependentUpon>Update_nv_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Add_nv_From.resx">
+      <DependentUpon>Add_nv_From.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Add_SanPham_Form.resx">
       <DependentUpon>Add_SanPham_Form.cs</DependentUpon>
@@ -186,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Update_Lo_Form.resx">
       <DependentUpon>Update_Lo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Update_nv_Form.resx">
+      <DependentUpon>Update_nv_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,6 +286,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rectangle6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
