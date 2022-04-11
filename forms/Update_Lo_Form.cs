@@ -29,8 +29,8 @@ namespace QL_2.forms
             dateTimePicker_Nsx.Format = DateTimePickerFormat.Custom;
             dateTimePicker_Hsd.Format = DateTimePickerFormat.Custom;
 
-            dateTimePicker_Nsx.CustomFormat = " dd/MM/yyyy";
-            dateTimePicker_Hsd.CustomFormat = " dd/MM/yyyy";
+            dateTimePicker_Nsx.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker_Hsd.CustomFormat = "dd/MM/yyyy";
 
             dateTimePicker_Hsd.MinDate = DateTime.Today;
 
