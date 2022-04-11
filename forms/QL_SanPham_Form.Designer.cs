@@ -82,6 +82,7 @@ namespace QL_2.forms
             this.dataGridView_SanPham.ReadOnly = true;
             this.dataGridView_SanPham.RowHeadersWidth = 24;
             this.dataGridView_SanPham.RowTemplate.Height = 220;
+            this.dataGridView_SanPham.RowTemplate.ReadOnly = true;
             this.dataGridView_SanPham.Size = new System.Drawing.Size(1000, 417);
             this.dataGridView_SanPham.TabIndex = 0;
             this.dataGridView_SanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SanPham_CellClick);
@@ -202,10 +203,11 @@ namespace QL_2.forms
             // 
             // ảnh
             // 
-            this.ảnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ảnh.HeaderText = "Img";
+            this.ảnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ảnh.HeaderText = "Ảnh";
             this.ảnh.Name = "ảnh";
             this.ảnh.ReadOnly = true;
+            this.ảnh.Width = 220;
             // 
             // Name_sanpham
             // 

@@ -60,7 +60,9 @@ namespace QL_2.forms
         {
             if(e.ColumnIndex == 5)
             {
-                MessageBox.Show("Hello");
+                Form updateSanPhamForm = new Update_SanPham_Form(this, sanPhams[e.RowIndex].Id_san_pham);
+
+                updateSanPhamForm.Show();
             }
             if (e.ColumnIndex == 6)
             {
@@ -69,7 +71,7 @@ namespace QL_2.forms
 
         }
 
-        private void guna2Button_refresh_Click(object sender, EventArgs e)
+        public void guna2Button_refresh_Click(object sender, EventArgs e)
         {
             GetAllListOfSanPham();
         }

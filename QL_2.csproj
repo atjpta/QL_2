@@ -158,6 +158,12 @@
     <Compile Include="forms\Update_Lo_Form.Designer.cs">
       <DependentUpon>Update_Lo_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Update_SanPham_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Update_SanPham_Form.Designer.cs">
+      <DependentUpon>Update_SanPham_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMenu.resx">
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Update_Lo_Form.resx">
       <DependentUpon>Update_Lo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Update_SanPham_Form.resx">
+      <DependentUpon>Update_SanPham_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

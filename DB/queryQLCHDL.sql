@@ -47,6 +47,11 @@ delete from sanpham where 'id_sp' = 31;
 
 INSERT INTO `sanpham` (`ID_NV`, `MALO`, `TENSP`, `DON_VI_TINH`, `SO_LUONG_TON_KHO`) VALUES ('2', 'lo1', 'San Pham 1001', 'Chiec', '69');
 
+update sanpham 
+set 
+tensp = 'name Temp', 
+don_vi_tinh = 'Cai'
+where id_sp = 1;
 
 insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
 values ("root", "chu toa", "M","2022-03-03", "dia chi ne", "0342622915");

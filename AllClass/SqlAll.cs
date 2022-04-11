@@ -263,9 +263,9 @@ namespace QL_2.AllClass
             SanPham SanPham;
             cmd.Connection = con;
             cmd.CommandText =
-                "select *" +
-                "from lo " +
-                "where malo = '" + maSP.ToString() + "'";
+                "select * " +
+                "from sanpham " +
+                "where id_sp = " + maSP;
             MySqlDataReader reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
@@ -282,6 +282,7 @@ namespace QL_2.AllClass
                         reader.GetInt32("so_luong_ton_kho"),
                         (byte[])reader["img"]
                      );
+                    reader.Close();
                     return SanPham;
                 }
             }
@@ -324,5 +325,37 @@ namespace QL_2.AllClass
                 return false;
             }
         }
+
+        public bool Update_SanPham(SanPham sanPham)
+        {
+            cmd.Connection = con;
+            cmd.CommandText =
+               "update sanpham " 
+               + "set "
+               + "id_nv = '" + sanPham.Id_nhan_vien.ToString() + "', "
+               + "malo = '" + sanPham.Malo + "', "
+               + "tensp = '" + sanPham.Ten_san_pham + "', "
+               + "don_vi_tinh = '" + sanPham.Don_vi_tinh + "', "
+               + "so_luong_ton_kho = '" + sanPham.So_luong_ton_kho + "', "
+               + "img = @img " 
+               + "where id_sp = " + sanPham.Id_san_pham;
+
+            cmd.Parameters.Add(new MySqlParameter("@img", sanPham.Img));
+
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Close();
+                return true;
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo cực căng!");
+
+                return false;
+            }
+
+        }    
     }
 }
