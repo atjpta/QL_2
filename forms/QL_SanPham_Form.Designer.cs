@@ -30,7 +30,7 @@ namespace QL_2.forms
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView_Lo = new System.Windows.Forms.DataGridView();
+            this.dataGridView_SanPham = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button_refresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -45,7 +45,7 @@ namespace QL_2.forms
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Lo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SanPham)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,18 +55,20 @@ namespace QL_2.forms
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.BackgroundImage = global::QL_2.Properties.Resources.Rectangle_4;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.dataGridView_Lo);
+            this.panel2.Controls.Add(this.dataGridView_SanPham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 200);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 417);
             this.panel2.TabIndex = 3;
             // 
-            // dataGridView_Lo
+            // dataGridView_SanPham
             // 
-            this.dataGridView_Lo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Lo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Lo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_SanPham.AllowUserToAddRows = false;
+            this.dataGridView_SanPham.AllowUserToDeleteRows = false;
+            this.dataGridView_SanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_SanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ảnh,
             this.Name_sanpham,
             this.maSp,
@@ -74,12 +76,16 @@ namespace QL_2.forms
             this.SoLuong,
             this.edit,
             this.delete});
-            this.dataGridView_Lo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Lo.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_Lo.Name = "dataGridView_Lo";
-            this.dataGridView_Lo.ReadOnly = true;
-            this.dataGridView_Lo.Size = new System.Drawing.Size(1000, 417);
-            this.dataGridView_Lo.TabIndex = 0;
+            this.dataGridView_SanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_SanPham.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_SanPham.Name = "dataGridView_SanPham";
+            this.dataGridView_SanPham.ReadOnly = true;
+            this.dataGridView_SanPham.RowHeadersWidth = 24;
+            this.dataGridView_SanPham.RowTemplate.Height = 220;
+            this.dataGridView_SanPham.RowTemplate.ReadOnly = true;
+            this.dataGridView_SanPham.Size = new System.Drawing.Size(1000, 417);
+            this.dataGridView_SanPham.TabIndex = 0;
+            this.dataGridView_SanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SanPham_CellClick);
             // 
             // panel1
             // 
@@ -114,6 +120,7 @@ namespace QL_2.forms
             this.guna2Button_refresh.Size = new System.Drawing.Size(160, 60);
             this.guna2Button_refresh.TabIndex = 4;
             this.guna2Button_refresh.Text = "Làm mới";
+            this.guna2Button_refresh.Click += new System.EventHandler(this.guna2Button_refresh_Click);
             // 
             // guna2Button2
             // 
@@ -196,30 +203,36 @@ namespace QL_2.forms
             // 
             // ảnh
             // 
-            this.ảnh.HeaderText = "Img";
+            this.ảnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ảnh.HeaderText = "Ảnh";
             this.ảnh.Name = "ảnh";
             this.ảnh.ReadOnly = true;
+            this.ảnh.Width = 220;
             // 
             // Name_sanpham
             // 
+            this.Name_sanpham.FillWeight = 25.77319F;
             this.Name_sanpham.HeaderText = "Tên sản phẩm";
             this.Name_sanpham.Name = "Name_sanpham";
             this.Name_sanpham.ReadOnly = true;
             // 
             // maSp
             // 
+            this.maSp.FillWeight = 25.77319F;
             this.maSp.HeaderText = "Mã sản phẩm";
             this.maSp.Name = "maSp";
             this.maSp.ReadOnly = true;
             // 
             // DonViTinh
             // 
-            this.DonViTinh.HeaderText = "Đơn giá";
+            this.DonViTinh.FillWeight = 25.77319F;
+            this.DonViTinh.HeaderText = "Đơn vị tính";
             this.DonViTinh.Name = "DonViTinh";
             this.DonViTinh.ReadOnly = true;
             // 
             // SoLuong
             // 
+            this.SoLuong.FillWeight = 25.77319F;
             this.SoLuong.HeaderText = "Số lượng";
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.ReadOnly = true;
@@ -227,24 +240,26 @@ namespace QL_2.forms
             // edit
             // 
             this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.edit.HeaderText = "";
+            this.edit.HeaderText = "Sửa";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.edit.Text = "Sửa";
             this.edit.ToolTipText = "Sửa";
             this.edit.UseColumnTextForButtonValue = true;
+            this.edit.Width = 50;
             // 
             // delete
             // 
             this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.delete.FillWeight = 338.1443F;
-            this.delete.HeaderText = "";
+            this.delete.HeaderText = "Xóa";
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Text = "Xóa";
             this.delete.ToolTipText = "Xóa";
             this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 50;
             // 
             // QL_SanPham_Form
             // 
@@ -257,8 +272,9 @@ namespace QL_2.forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_SanPham_Form";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QL_SanPham_Form_FormClosing);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Lo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SanPham)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -268,7 +284,7 @@ namespace QL_2.forms
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView_Lo;
+        private System.Windows.Forms.DataGridView dataGridView_SanPham;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button_refresh;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;

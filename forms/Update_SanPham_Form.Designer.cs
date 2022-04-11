@@ -1,7 +1,7 @@
 ﻿
 namespace QL_2.forms
 {
-    partial class Add_SanPham_Form
+    partial class Update_SanPham_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@ namespace QL_2.forms
             this.panel2.Location = new System.Drawing.Point(0, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 534);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 5;
             // 
             // guna2NumericUpDown_SoLuong
             // 
@@ -267,7 +267,6 @@ namespace QL_2.forms
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Hủy bỏ";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button_Add_SanPham
             // 
@@ -296,7 +295,7 @@ namespace QL_2.forms
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 83);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
             // 
             // label_Title
             // 
@@ -305,11 +304,11 @@ namespace QL_2.forms
             this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Title.Location = new System.Drawing.Point(383, 23);
             this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(267, 39);
+            this.label_Title.Size = new System.Drawing.Size(239, 39);
             this.label_Title.TabIndex = 0;
-            this.label_Title.Text = "Thêm sản phẩm";
+            this.label_Title.Text = "Sửa sản phẩm";
             // 
-            // Add_SanPham_Form
+            // Update_SanPham_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,10 +317,9 @@ namespace QL_2.forms
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1016, 656);
             this.MinimumSize = new System.Drawing.Size(1016, 656);
-            this.Name = "Add_SanPham_Form";
+            this.Name = "Update_SanPham_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddSanPham_Form";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_SanPham_Form_FormClosing);
+            this.Text = "Update_SanPham_Form";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown_SoLuong)).EndInit();
@@ -334,22 +332,22 @@ namespace QL_2.forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button_Add_SanPham;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Title;
-        private Guna.UI2.WinForms.Guna2Button guna2Button_AddPicture;
+        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown_SoLuong;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox_Lo;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_NhanVien;
         private System.Windows.Forms.Label label_Name;
-        private System.Windows.Forms.PictureBox pictureBox_UploadedPicture;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Ten_san_pham;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Don_vi_tinh;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox_Lo;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown_SoLuong;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_Ten_san_pham;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox_UploadedPicture;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_AddPicture;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_Add_SanPham;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

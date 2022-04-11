@@ -14,7 +14,6 @@ insert into lo (malo, ngay_nhap, han_su_dung) values ("lo1", "2022-04-05", "2023
 insert into lo (malo, ngay_nhap, han_su_dung) values ("lo2", "2022-04-05", "2024-04-05");
 insert into lo (malo, ngay_nhap, han_su_dung) values ("lo3", "2022/04/05", "2025/04/05");
 
-
 insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
 value ("nhanvien1", "cao duc an", "M","2000-03-03", "dia chi ne", "0342622915");
 insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
