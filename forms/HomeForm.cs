@@ -39,7 +39,7 @@ namespace QL_2.forms
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             menu.chargeTitle("Quản lý nhân viên");
-            OpenForm(new QL_NhanVien_Form(menu));
+            OpenForm(new QL_NV_Form(menu));
         }
 
        

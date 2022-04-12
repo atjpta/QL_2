@@ -13,8 +13,8 @@ namespace QL_2.forms
 {
     public partial class Add_nv_From : Form
     {
-        private readonly QL_NhanVien_Form ql_NhanVien_Form;
-        public Add_nv_From(QL_NhanVien_Form ql_NhanVien_Form)
+        private readonly QL_NV_Form ql_NhanVien_Form;
+        public Add_nv_From(QL_NV_Form ql_NhanVien_Form)
         {
             this.ql_NhanVien_Form = ql_NhanVien_Form;
             InitializeComponent();

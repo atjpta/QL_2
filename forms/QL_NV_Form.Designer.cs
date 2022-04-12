@@ -1,7 +1,7 @@
 ﻿
 namespace QL_2.forms
 {
-    partial class QL_NhanVien_Form
+    partial class QL_NV_Form
     {
         /// <summary>
         /// Required designer variable.

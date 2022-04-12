@@ -8,110 +8,20 @@ using System.Windows.Forms;
 using System.Data;
 using QL_2.forms;
 
-
 namespace QL_2.AllClass
 {
-    class SqlAll
+    class Sql_lo
     {
-        private string constr; // lưu toan bộ thông tin để kết nối DB
-        private MySqlConnection con; // dùng để kết nối 
-        private MySqlCommand cmd = new MySqlCommand(); // lưu các lệnh của sql
+        private SqlCon con = new SqlCon();
+        private MySqlCommand cmd = new MySqlCommand();
 
-        private string server = "localhost";
-        private string user = "root";
-        private string pwd = "";
-        private string database = "QLCHDL";
-        private int port = 3306;
-
-        public MySqlConnection Connection()
+        public Sql_lo()
         {
-            constr = "server=" + server +
-                    ";user=" + user +
-                    ";pwd=" + pwd +
-                    ";database=" + database +
-                    ";port=" + port +
-                    ";";
-
-            con = new MySqlConnection(constr);
-
-            try
-            {
-                con.Open();
-                Console.WriteLine("ket noi thanh cong!!!!!!!");
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return con;
+            cmd.Connection = con.Connection();
         }
 
-        // kết nối vào DB
-        public SqlAll()
-        {
-            constr = "server=" + server +
-                    ";user=" + user +
-                    ";pwd=" + pwd +
-                    ";database=" + database +
-                    ";port=" + port +
-                    ";";
-
-            con = new MySqlConnection(constr);
-
-            try
-            {
-                con.Open();
-                Console.WriteLine("ket noi thanh cong!!!!!!!");
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        // lấy tài khoản dựa vào UserName
-        public TaiKhoan GetTaikhoan(String UserName)
-        {
-            cmd.Connection = con;
-            cmd.CommandText =
-                "select * " +
-                "from taikhoan " +
-                "where username = '" + UserName + "'";
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    TaiKhoan taiKhoan = new TaiKhoan
-                        (
-                            reader.GetString("username"),
-                            reader.GetString("password"),
-                            reader.GetInt32("maltk")
-                        );
-                    return taiKhoan;
-                }
-            }
-
-            reader.Close();
-            return null;
-
-        }
-
-        internal bool Update_Lo(Lo lo)
-        {
-            throw new NotImplementedException();
-        }
-
-        //lấy bảng lo từ DB
         public List<Lo> GetALL_Lo()
         {
-            cmd.Connection = con;
             cmd.CommandText =
                 "select * " +
                 "from lo";
@@ -137,7 +47,7 @@ namespace QL_2.AllClass
                 }
                 reader.Close();
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("MySql connetion ! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -149,7 +59,6 @@ namespace QL_2.AllClass
         // xóa 1 lo dựa vào mã lo
         public void Delete_Lo(String maLo)
         {
-            cmd.Connection = con;
             cmd.CommandText =
                 "delete " +
                 "from lo " +
@@ -164,7 +73,6 @@ namespace QL_2.AllClass
         {
             if (Find_Lo(lo.Malo) == null)
             {
-                cmd.Connection = con;
                 cmd.CommandText =
                    "insert into lo(malo, ngay_nhap, han_su_dung) " +
                    "values('" + lo.Malo + "', '" + lo.Nsx.ToString("yyyy/MM/dd") + "', '" + lo.Hsd.ToString("yyyy/MM/dd") + "')";
@@ -177,7 +85,7 @@ namespace QL_2.AllClass
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show(ex.Message , "Thông báo cực căng!!!");
+                    MessageBox.Show(ex.Message, "Thông báo cực căng!!!");
                     return false;
                 }
             }
@@ -186,15 +94,12 @@ namespace QL_2.AllClass
                 MessageBox.Show("Bạn đã nhập trùng Mã lô", "Thông báo cực căng!!!");
                 return false;
             }
-
-            
         }
 
         //tìm xem da có lô chưa
         public Lo Find_Lo(String maLo)
         {
-            Lo lo ;
-            cmd.Connection = con;
+            Lo lo;
             cmd.CommandText =
                 "select *" +
                 "from lo " +
@@ -206,7 +111,7 @@ namespace QL_2.AllClass
                 int i = 0;
                 while (reader.Read())
                 {
-                    
+
                     lo = new Lo
                     (
                         reader.GetString("malo"),
@@ -224,7 +129,6 @@ namespace QL_2.AllClass
 
         public bool Update_Lo_db(Lo lo)
         {
-            cmd.Connection = con;
             cmd.CommandText =
                 "update lo " +
                 "set    ngay_nhap = '" + lo.Nsx.ToString("yyyy/MM/dd") + "', " +
@@ -243,5 +147,6 @@ namespace QL_2.AllClass
                 return false;
             }
         }
+
     }
 }

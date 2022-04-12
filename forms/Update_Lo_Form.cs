@@ -20,7 +20,7 @@ namespace QL_2.forms
         {
             this.qL_Lo = ql_Lo;
             InitializeComponent();
-            SqlAll sqlAll = new SqlAll();
+            Sql_lo sqlAll = new Sql_lo();
             lo = sqlAll.Find_Lo(Malo);
             label_fix_maLo.Text = lo.Malo;
             dateTimePicker_Nsx.Value = lo.Nsx;
@@ -40,7 +40,7 @@ namespace QL_2.forms
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
-            SqlAll sqlAll = new SqlAll();
+            Sql_lo sqlAll = new Sql_lo();
             Lo temp = new Lo
                 (
                     label_fix_maLo.Text,

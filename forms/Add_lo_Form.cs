@@ -46,7 +46,7 @@ namespace QL_2.forms
                     dateTimePicker_Nsx.Value,
                     dateTimePicker_Hsd.Value
                 );
-            SqlAll sqlAll = new SqlAll();
+            Sql_lo sqlAll = new Sql_lo();
             if (sqlAll.Add_Lo(lo))
             {
                 qL_Lo.Refresh_Lo();

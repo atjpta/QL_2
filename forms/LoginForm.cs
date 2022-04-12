@@ -50,11 +50,11 @@ namespace QL_2.forms
                 guna2ToggleSwitch1.Checked = Properties.Settings.Default.check;
             }
 
-            TaiKhoan taiKhoan = new TaiKhoan(guna2TextBox_taikhoan.Text, guna2TextBox_pwd.Text);
-            mark = taiKhoan.Login();
+            Sql_taikhoan taikhoan = new Sql_taikhoan();
+            mark = taikhoan.login(guna2TextBox_taikhoan.Text, guna2TextBox_pwd.Text);
             if(mark != 0)
             {
-                formMenu.currentUsername = taiKhoan.Get_Username();
+                formMenu.current_id_nv = mark;
                 MessageBox.Show("đăng nhập thành công!!!!!!!", "thông báo bình thường");
                 HomeForm childForm = new HomeForm(formMenu);
                 childForm.TopLevel = false;

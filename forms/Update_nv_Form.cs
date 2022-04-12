@@ -13,10 +13,10 @@ namespace QL_2.forms
 {
     public partial class Update_nv_Form : Form
     {
-        private readonly QL_NhanVien_Form ql_NhanVien_Form;
+        private readonly QL_NV_Form ql_NhanVien_Form;
         NhanVien nv;
         Sql_NhanVien sql = new Sql_NhanVien();
-        public Update_nv_Form(QL_NhanVien_Form ql_NhanVien_Form, string username)
+        public Update_nv_Form(QL_NV_Form ql_NhanVien_Form, string username)
         {
             nv = sql.find_username(username);
             InitializeComponent();

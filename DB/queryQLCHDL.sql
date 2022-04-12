@@ -24,8 +24,8 @@ value ("nhanvien3", "cong ton thang", "M","2000-03-03", "dia chi ne", "034262291
 insert into nhanvien (username, ho_ten_nv, gioi_tinh, ngay_sinh, dia_chi, sdt) 
 value ("nhanvien4", "ai z ta", "M","2000-03-03", "dia chi ne", "0342622915");
 
-drop procedure update_nv;
 # procedure update nhân viên
+drop procedure update_nv;
 DELIMITER $
 create procedure update_nv (
 	in ID_nv_up int(11),
@@ -53,8 +53,11 @@ end $
 
 call update_nv("2", "uuu","sss","F","2099-02-02","eghh","111111111","1");
 call Get_All_nv();
-drop procedure add_nv;
+
+
+
 # procedure add nhân viên
+drop procedure add_nv;
 DELIMITER $
 create procedure add_nv (
 	in USERNAME_add CHAR(32) ,
@@ -72,6 +75,7 @@ end $
 
 call add_nv("aaa","erthg","F","2099-02-02","eghh","111111111","2");
 
+# procedure lấy thông tin tất cả nv
 drop procedure Get_All_nv;
 DELIMITER $
 create procedure Get_All_nv()
@@ -83,6 +87,7 @@ end $
 
 call Get_All_nv();
 
+# lấy 1 nhan vien dua tren username
 drop procedure Get_nv;
 DELIMITER $
 create procedure Get_nv(username char(32))
@@ -95,27 +100,57 @@ end $
 
 call Get_nv("uuu");
 
-select * from nhanvien;
-select username from nhanvien where nhanvien.username = "gwwww";
-select username from nhanvien where nhanvien.username = 'uuu';
-select * from taikhoan;
-
-DELIMITER $
-create function test()
-returns int 
+# lấy thông tin tất cả sản phẩm
+drop procedure Get_All_sp;
+DELIMITER $ 
+create procedure Get_All_sp()
 begin
-	return 4654;
+	select 	a.id_sp,
+			a.id_nv,
+            a.malo,
+            a.tensp,
+			a.don_vi_tinh,
+            a.don_gia,
+            a.so_luong_ton_kho,
+			b.ho_ten_nv,
+            a.img
+    from sanpham a join nhanvien b on a.id_nv = b.id_nv;
 end $
 
-select test();
+call Get_All_sp();
 
-DELIMITER $
-create function test2 ()
-returns int 
-begin 
-	declare a int ;
-	set a = 53;
+
+#lấy thông tin sản phẩm dựa trên id
+drop procedure Get_find_sp;
+DELIMITER $ 
+create procedure Get_find_sp(id int)
+begin
+	select 	a.id_sp,
+			a.id_nv,
+            a.malo,
+            a.don_gia,
+            a.tensp,
+            a.don_vi_tinh,
+            a.so_luong_ton_kho,
+            a.img,
+            b.ho_ten_nv
+    from sanpham a join nhanvien b on a.id_nv = b.id_nv
+    where a.id_sp = id;
 end $
 
+call Get_find_sp(1);
 
+
+# đăng nhập
+drop procedure login;
+DELIMITER $ 
+create procedure login (username char(32), pwd char(32))
+begin
+    select b.id_nv
+    from taikhoan a join nhanvien b on a.username = b.username
+    where a.password = SHA2(pwd, 512)
+			and a.username = username;
+end $
+
+call login("nhanvien1", "1");
 

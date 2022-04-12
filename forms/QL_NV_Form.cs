@@ -11,7 +11,7 @@ using QL_2.AllClass;
 
 namespace QL_2.forms
 {
-    public partial class QL_NhanVien_Form : Form
+    public partial class QL_NV_Form : Form
     {
         private readonly FormMenu menu;
         private List<NhanVien> ds_nv;
@@ -19,7 +19,7 @@ namespace QL_2.forms
         private NhanVien nv_update = null;
 
         private Sql_NhanVien sql_NhanVien = new Sql_NhanVien();
-        public QL_NhanVien_Form(FormMenu menu)
+        public QL_NV_Form(FormMenu menu)
         {
             this.menu = menu;
             InitializeComponent();

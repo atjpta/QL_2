@@ -15,7 +15,7 @@ namespace QL_2.forms
     public partial class QL_Lo_Form : Form
     {
         private readonly FormMenu menu;
-        private SqlAll sqlAll = new SqlAll();
+        private Sql_lo sql_lo = new Sql_lo();
         List<Lo> los = new List<Lo>();
         public QL_Lo_Form(FormMenu menu)
         {
@@ -29,7 +29,7 @@ namespace QL_2.forms
         public void Refresh_Lo()
         {
             ClearTableRows();
-            los = sqlAll.GetALL_Lo();
+            los = sql_lo.GetALL_Lo();
             int i = 0;
             while (los.Count() != i)
             {
@@ -107,7 +107,7 @@ namespace QL_2.forms
                     DialogResult result = MessageBox.Show(message, title, buttons);
                     if (result == DialogResult.Yes)
                     {
-                        sqlAll.Delete_Lo(this.Get_Ma_Lo(e));
+                        sql_lo.Delete_Lo(this.Get_Ma_Lo(e));
                         Refresh_Lo();
                     }
                 }
@@ -130,7 +130,7 @@ namespace QL_2.forms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            QL_SanPham_Form qL_SanPham = new QL_SanPham_Form(menu);
+            QL_SP_Form qL_SanPham = new QL_SP_Form(menu);
             menu.OpenchildForm(qL_SanPham);
             menu.chargeTitle("Kho");
         }

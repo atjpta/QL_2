@@ -13,7 +13,7 @@ namespace QL_2.AllClass
 {
     class Sql_NhanVien
     {
-        private SqlAll sqlAll = new SqlAll();
+        private SqlCon sqlAll = new SqlCon();
         private MySqlCommand cmd = new MySqlCommand();
 
         public List<NhanVien> GetAll_Nhanvien()

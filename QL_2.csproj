@@ -102,9 +102,11 @@
     <Compile Include="AllClass\Lo.cs" />
     <Compile Include="AllClass\NhanVien.cs" />
     <Compile Include="AllClass\SanPham.cs" />
-    <Compile Include="AllClass\SqlAll.cs" />
+    <Compile Include="AllClass\SqlCon.cs" />
+    <Compile Include="AllClass\Sql_lo.cs" />
     <Compile Include="AllClass\Sql_NhanVien.cs" />
-    <Compile Include="AllClass\TaiKhoan.cs" />
+    <Compile Include="AllClass\sql_SanPham.cs" />
+    <Compile Include="AllClass\Sql_taikhoan.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +119,11 @@
     <Compile Include="forms\Add_nv_From.Designer.cs">
       <DependentUpon>Add_nv_From.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Add_SanPham_Form.cs">
+    <Compile Include="forms\Add_SP_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Add_SanPham_Form.Designer.cs">
-      <DependentUpon>Add_SanPham_Form.cs</DependentUpon>
+    <Compile Include="forms\Add_SP_Form.Designer.cs">
+      <DependentUpon>Add_SP_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Add_lo_Form.cs">
       <SubType>Form</SubType>
@@ -147,17 +149,17 @@
     <Compile Include="forms\QL_Lo_Form.Designer.cs">
       <DependentUpon>QL_Lo_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\QL_NhanVien_Form.cs">
+    <Compile Include="forms\QL_NV_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\QL_NhanVien_Form.Designer.cs">
-      <DependentUpon>QL_NhanVien_Form.cs</DependentUpon>
+    <Compile Include="forms\QL_NV_Form.Designer.cs">
+      <DependentUpon>QL_NV_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\QL_SanPham_Form.cs">
+    <Compile Include="forms\QL_SP_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\QL_SanPham_Form.Designer.cs">
-      <DependentUpon>QL_SanPham_Form.cs</DependentUpon>
+    <Compile Include="forms\QL_SP_Form.Designer.cs">
+      <DependentUpon>QL_SP_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Update_Lo_Form.cs">
       <SubType>Form</SubType>
@@ -171,6 +173,12 @@
     <Compile Include="forms\Update_nv_Form.Designer.cs">
       <DependentUpon>Update_nv_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Update_sp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Update_sp_Form.Designer.cs">
+      <DependentUpon>Update_sp_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMenu.resx">
@@ -179,8 +187,8 @@
     <EmbeddedResource Include="forms\Add_nv_From.resx">
       <DependentUpon>Add_nv_From.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Add_SanPham_Form.resx">
-      <DependentUpon>Add_SanPham_Form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Add_SP_Form.resx">
+      <DependentUpon>Add_SP_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Add_lo_Form.resx">
       <DependentUpon>Add_lo_Form.cs</DependentUpon>
@@ -194,17 +202,20 @@
     <EmbeddedResource Include="forms\QL_Lo_Form.resx">
       <DependentUpon>QL_Lo_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\QL_NhanVien_Form.resx">
-      <DependentUpon>QL_NhanVien_Form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\QL_NV_Form.resx">
+      <DependentUpon>QL_NV_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\QL_SanPham_Form.resx">
-      <DependentUpon>QL_SanPham_Form.cs</DependentUpon>
+    <EmbeddedResource Include="forms\QL_SP_Form.resx">
+      <DependentUpon>QL_SP_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Update_Lo_Form.resx">
       <DependentUpon>Update_Lo_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Update_nv_Form.resx">
       <DependentUpon>Update_nv_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Update_sp_Form.resx">
+      <DependentUpon>Update_sp_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
