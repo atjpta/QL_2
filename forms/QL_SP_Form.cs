@@ -54,6 +54,13 @@ namespace QL_2.forms
                     sanPhams[i].Ten_san_pham);
             }
             sanPhams2 = sanPhams;
+            label3_nv.Text = "";
+            label_name_sp.Text = "";
+            label_malo.Text = "";
+            label_dongia.Text = "";
+            label_donvitinh.Text = "";
+            label_sl.Text = "";
+            sp_update = null;
         }
 
         public void print_sp()

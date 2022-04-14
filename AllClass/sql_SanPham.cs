@@ -36,7 +36,6 @@ namespace QL_2.AllClass
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine(reader.GetValue(8));
                         SanPham sanPham = new SanPham
                         (
                             reader.GetInt32("id_sp"),
@@ -173,12 +172,12 @@ namespace QL_2.AllClass
             cmd.CommandText =
                "update sanpham "
                + "set "
-               + "id_nv = '" + sanPham.Id_nhan_vien.ToString() + "', "
+               + "id_nv = " + sanPham.Id_nhan_vien + ", "
                + "malo = '" + sanPham.Malo + "', "
                + "tensp = '" + sanPham.Ten_san_pham + "', "
                + "don_vi_tinh = '" + sanPham.Don_vi_tinh + "', "
-               + "don_gia = '" + sanPham.DON_GIA + "', "
-               + "so_luong_ton_kho = '" + sanPham.So_luong_ton_kho + "', "
+               + "don_gia = " + sanPham.DON_GIA + ", "
+               + "so_luong_ton_kho = " + sanPham.So_luong_ton_kho + ", "
                + "img = @img "
                + "where id_sp = " + sanPham.Id_san_pham;
 

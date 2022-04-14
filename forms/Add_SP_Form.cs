@@ -104,6 +104,7 @@ namespace QL_2.forms
                     (int)guna2NumericUpDown2_sl.Value,
                     ImageToByteArray(pictureBox1_uploadedImg)
                     );
+                    qL_SanPham.Refresh_sp();
 
                 if (sql_SanPham.Add_SanPham(sanPham))
                 {

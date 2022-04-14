@@ -36,7 +36,6 @@ namespace QL_2.forms
             guna2ComboBox_Lo.Text = sanPham.Malo;
             guna2NumericUpDown_SoLuong.Value = sanPham.So_luong_ton_kho;
             guna2TextBox_Don_vi_tinh.Text = sanPham.Don_vi_tinh;
-
             pictureBox_uploadedImg.Image = Image.FromStream(sanPham.GetImgStream());
 
 
@@ -80,11 +79,13 @@ namespace QL_2.forms
             SanPham sanPhamEdited = new SanPham
                 (
                 sanPham.Id_san_pham,
+                sanPham.Id_nhan_vien,
                 guna2ComboBox_Lo.Text,
                 guna2TextBox_Ten_san_pham.Text,
                 guna2TextBox_Don_vi_tinh.Text,
                 (int)guna2NumericUpDown_dongia.Value,
                 (int)guna2NumericUpDown_SoLuong.Value,
+                sanPham.Name_nv,
                 ImageToByteArray(pictureBox_uploadedImg)
                 );
 
