@@ -59,7 +59,7 @@ namespace QL_2.forms
                 return false;
             }
 
-            if (guna2PictureBox_img.Image == null)
+            if (pictureBox1_uploadedImg.Image == null)
             {
                 MessageBox.Show("Hãy nhập Nhập hình ảnh", "Thông báo cực căng");
                 return false;
@@ -88,10 +88,7 @@ namespace QL_2.forms
 
       
 
-        private void Add_SanPham_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //qL_SanPham.GetAllListOfSanPham();
-        }
+       
 
         private void guna2Button_add_Click(object sender, EventArgs e)
         {
@@ -105,7 +102,7 @@ namespace QL_2.forms
                     guna2TextBox_donvitinh.Text,
                     (int)guna2NumericUpDown_dongia.Value,
                     (int)guna2NumericUpDown2_sl.Value,
-                    ImageToByteArray(guna2PictureBox_img)
+                    ImageToByteArray(pictureBox1_uploadedImg)
                     );
 
                 if (sql_SanPham.Add_SanPham(sanPham))
@@ -124,7 +121,7 @@ namespace QL_2.forms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                guna2PictureBox_img.ImageLocation = openFileDialog.FileName;
+                pictureBox1_uploadedImg.ImageLocation = openFileDialog.FileName;
             }
         }
 

@@ -139,7 +139,7 @@ namespace QL_2.AllClass
                 cmd.CommandText =
                    "insert into sanpham( `ID_NV`, `MALO`, `TENSP`, `DON_VI_TINH`,`don_gia`, `SO_LUONG_TON_KHO`, img) " +
                    "values('"
-                   + sanPham.Id_nhan_vien.ToString() + "', "
+                   + sanPham.Id_nhan_vien + "', "
                    + "'" + sanPham.Malo + "', "
                    + "'" + sanPham.Ten_san_pham + "', "
                    + "'" + sanPham.Don_vi_tinh + "', "

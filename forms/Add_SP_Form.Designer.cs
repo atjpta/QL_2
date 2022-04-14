@@ -38,7 +38,6 @@ namespace QL_2.forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox_img = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2TextBox1_name_sp = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_Name = new System.Windows.Forms.Label();
             this.guna2Button_upload = new Guna.UI2.WinForms.Guna2Button();
@@ -46,17 +45,19 @@ namespace QL_2.forms
             this.guna2Button_add = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_Title = new System.Windows.Forms.Label();
+            this.pictureBox1_uploadedImg = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown2_sl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown_dongia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_img)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_uploadedImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::QL_2.Properties.Resources.Rectangle_5;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox1_uploadedImg);
             this.panel2.Controls.Add(this.guna2NumericUpDown2_sl);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.guna2NumericUpDown_dongia);
@@ -65,7 +66,6 @@ namespace QL_2.forms
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.guna2PictureBox_img);
             this.panel2.Controls.Add(this.guna2TextBox1_name_sp);
             this.panel2.Controls.Add(this.label_Name);
             this.panel2.Controls.Add(this.guna2Button_upload);
@@ -200,15 +200,6 @@ namespace QL_2.forms
             this.label1.TabIndex = 12;
             this.label1.Text = "Mã lô :";
             // 
-            // guna2PictureBox_img
-            // 
-            this.guna2PictureBox_img.ImageRotate = 0F;
-            this.guna2PictureBox_img.Location = new System.Drawing.Point(180, 138);
-            this.guna2PictureBox_img.Name = "guna2PictureBox_img";
-            this.guna2PictureBox_img.Size = new System.Drawing.Size(220, 220);
-            this.guna2PictureBox_img.TabIndex = 11;
-            this.guna2PictureBox_img.TabStop = false;
-            // 
             // guna2TextBox1_name_sp
             // 
             this.guna2TextBox1_name_sp.BackColor = System.Drawing.Color.Transparent;
@@ -318,7 +309,15 @@ namespace QL_2.forms
             this.label_Title.TabIndex = 0;
             this.label_Title.Text = "Thêm sản phẩm";
             // 
-            // Add_SanPham_Form
+            // pictureBox1_uploadedImg
+            // 
+            this.pictureBox1_uploadedImg.Location = new System.Drawing.Point(163, 154);
+            this.pictureBox1_uploadedImg.Name = "pictureBox1_uploadedImg";
+            this.pictureBox1_uploadedImg.Size = new System.Drawing.Size(242, 229);
+            this.pictureBox1_uploadedImg.TabIndex = 22;
+            this.pictureBox1_uploadedImg.TabStop = false;
+            // 
+            // Add_SP_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,16 +326,16 @@ namespace QL_2.forms
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1016, 656);
             this.MinimumSize = new System.Drawing.Size(1016, 656);
-            this.Name = "Add_SanPham_Form";
+            this.Name = "Add_SP_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSanPham_Form";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown2_sl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown_dongia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox_img)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_uploadedImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +350,6 @@ namespace QL_2.forms
         private Guna.UI2.WinForms.Guna2Button guna2Button_upload;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1_name_sp;
         private System.Windows.Forms.Label label_Name;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox_img;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown_dongia;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox_malo;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox_donvitinh;
@@ -360,5 +358,6 @@ namespace QL_2.forms
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown2_sl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1_uploadedImg;
     }
 }

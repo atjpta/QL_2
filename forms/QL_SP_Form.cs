@@ -140,10 +140,13 @@ namespace QL_2.forms
         {
             if (sp_update == null)
             {
-                MessageBox.Show("vui lòng chọn nhân viên muốn sửa!!", "Thông báo cực căng");
+                MessageBox.Show("vui lòng chọn sản phẩm muốn sửa!!", "Thông báo cực căng");
             }
-            Update_sp_Form update = new Update_sp_Form(this, sp_update.Id_san_pham);
-            update.ShowDialog();
+            else
+            {
+                Update_sp_Form update = new Update_sp_Form(this, sp_update.Id_san_pham);
+                update.ShowDialog();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace QL_2
         private Panel leftBorderBtn;
         private Form currentChilForm;
 
-        public int current_id_nv = 0;
+        public int current_id_nv = 1;
 
         // hàm xây dựng 
         public FormMenu()
@@ -142,7 +142,7 @@ namespace QL_2
         {
             ActivateBtn(sender, RBGColor.color5);
             OpenchildForm(new LoginForm(this));
-            this.current_id_nv = 0;
+            this.current_id_nv = 1;
         }
 
        

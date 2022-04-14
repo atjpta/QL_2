@@ -37,7 +37,7 @@ namespace QL_2.forms
             guna2NumericUpDown_SoLuong.Value = sanPham.So_luong_ton_kho;
             guna2TextBox_Don_vi_tinh.Text = sanPham.Don_vi_tinh;
 
-            pictureBox_UploadedPicture.Image = Image.FromStream(sanPham.GetImgStream());
+            pictureBox_uploadedImg.Image = Image.FromStream(sanPham.GetImgStream());
 
 
         }
@@ -61,8 +61,6 @@ namespace QL_2.forms
             return ms.ToArray();
         }
 
-     
-
     
         private void guna2Button_upload_Click(object sender, EventArgs e)
         {
@@ -73,7 +71,7 @@ namespace QL_2.forms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox_UploadedPicture.ImageLocation = openFileDialog.FileName;
+                pictureBox_uploadedImg.ImageLocation = openFileDialog.FileName;
             }
         }
 
@@ -87,7 +85,7 @@ namespace QL_2.forms
                 guna2TextBox_Don_vi_tinh.Text,
                 (int)guna2NumericUpDown_dongia.Value,
                 (int)guna2NumericUpDown_SoLuong.Value,
-                ImageToByteArray(pictureBox_UploadedPicture)
+                ImageToByteArray(pictureBox_uploadedImg)
                 );
 
 

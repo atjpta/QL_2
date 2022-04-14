@@ -51,14 +51,14 @@ where nhanvien.ID_nv = id_nv_up;
 
 end $
 
-call update_nv("2", "uuu","sss","F","2099-02-02","eghh","111111111","1");
-call Get_All_nv();
+call update_nv("2", "uuu","sss","F","2099-02-02","eghh","111111111","1")$
+call Get_All_nv()$
 
-
+select * from sanpham$
 
 # procedure add nhân viên
-drop procedure add_nv;
-DELIMITER $
+drop procedure add_nv$
+
 create procedure add_nv (
 	in USERNAME_add CHAR(32) ,
 	in HO_TEN_NV_add VARCHAR(64)  ,
@@ -117,7 +117,7 @@ begin
     from sanpham a join nhanvien b on a.id_nv = b.id_nv;
 end $
 
-call Get_All_sp();
+call Get_All_sp()$
 
 
 #lấy thông tin sản phẩm dựa trên id
